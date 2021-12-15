@@ -22,6 +22,7 @@
             <div style="color: red;"><?php if(isset($_SESSION["err"])){echo $_SESSION["err"];}?></div>
             <br>
             <input type="submit" value="Zaloguj">
+            <!-- teścik kochany :) -->
         </form>
     </div>
     <script src="js/index.js"></script>
