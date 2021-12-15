@@ -23,6 +23,7 @@
             <br>
             <input type="submit" value="Zaloguj">
             <!-- teścik kochany :) -->
+            <!-- też cię kocham <3 -->
         </form>
     </div>
     <script src="js/index.js"></script>
