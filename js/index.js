@@ -1,14 +1,22 @@
 function checkValidation(){
     var login = document.querySelector("#login").value
     var pass = document.querySelector("#pass").value
-    if(login == null || pass == null || login == "" || pass == ""){
+    if(login == "" || pass == "" || login == null || pass == null){
         if(login == ""){
-            document.getElementById("login").style.backgroundColor = "red";
+            document.querySelector("#login").style.backgroundColor = "red";
         }
         if(pass == ""){
-            document.getElementById("pass").style.backgroundColor = "red";
+            document.querySelector("#pass").style.backgroundColor = "red";
         }
         return false;
     }
-    return true;
 }
+
+$("#img").animate({left: '-50%'}, 5000);
+// setTimeout(1000);
+$("#img").css({'background-color': 'red'});
+// setInterval(function(){
+//     $("#img").animate({left: '-50%'}, 5000);
+//     setTimeout(1000);
+//     $("#img").css({left: '105%'});
+// }, 1000)

@@ -13,11 +13,9 @@ if($result -> num_rows > 0){
         if($result['Pass'] == $password){
             header("Location: ../main.php");
         }else{
-            $_SESSION["err"] = "Błędny login lub hasło";
             header("Location: ../index.php");
         }
     }
 }else{
-    $_SESSION["err"] = "Błędny login lub hasło";
     header("Location: ../index.php");
 }
