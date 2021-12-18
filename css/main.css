@@ -19,7 +19,19 @@ body{
 #menu{
     background-color: seagreen;
     margin-top: 1%;
-    color: white;
     padding: 2%;
     border: 5px dotted black;
+}
+
+.option{
+    float: left;
+    min-height: ;
+}
+
+link{
+    text-decoration: none;
+}
+
+.link{
+    color: white;
 }
