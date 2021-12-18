@@ -44,12 +44,32 @@
         <div id="content">
             <p1>Idealny sklep na świąteczne zakupy!</p1><br>
             <p2>zapoznaj się z produktami na naszej stronie.</p2>
+            <hr>
+        </div>
+
+        <div id="contentB">
+            <p>GFDSAGSGRGAGD</p>
 
             <hr>
-
+            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ</button>
 
         </div>
 
+        <div id="contentC">
+            <p>GFDSAGSGRGAGD</p>
+
+            <hr>
+            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ</button>
+
+        </div>
+
+        <div id="contentD">
+            <p>GFDSAGSGRGAGD</p>
+
+            <hr>
+            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ</button>
+
+        </div>
 
 
     </div>

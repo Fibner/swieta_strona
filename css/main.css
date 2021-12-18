@@ -29,6 +29,7 @@ body{
     font-family: 'Dancing Script', cursive;
      text-align: center;
      font-size: 35px;
+     padding: 5px;
 }
 
 p2{
@@ -36,7 +37,60 @@ p2{
 }
 
 hr{
-    border: solid 2px ;
+    border: solid 1px ;
+}
+
+#contentB{
+    float: left;
+    padding: 10px;
+    width: 400px;
+    font-size: 30px;
+    background-color: brown;
+    min-height: 400px;
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 8%;
+
+}
+
+#contentC{
+    float: left;
+    padding: 10px;
+    width: 400px;
+    font-size: 30px;
+    background-color: brown;
+    min-height: 400px;
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 8%;
+
+}
+
+#contentD{
+    float: left;
+    padding: 10px;
+    width: 400px;
+    font-size: 30px;
+    background-color: brown;
+    min-height: 400px;
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 8%;
+
+}
+
+hr{
+    width: 60%;
+}
+
+.button{
+    border-radius: 50px;
+    width: 150px;
+    font-size: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: white;
+    padding: 5px;
+    border: none;
 }
 
 .option{
