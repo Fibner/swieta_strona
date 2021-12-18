@@ -13,10 +13,12 @@ function checkValidation(){
 }
 
 $("#img").animate({left: '-50%'}, 5000);
-// setTimeout(1000);
-$("#img").css({'background-color': 'red'});
-// setInterval(function(){
-//     $("#img").animate({left: '-50%'}, 5000);
-//     setTimeout(1000);
-//     $("#img").css({left: '105%'});
-// }, 1000)
+setTimeout(function(){
+    $("#img").css({left: '105%'});
+},5000);
+setInterval(function(){
+    $("#img").animate({left: '-50%'}, 5000);
+    setTimeout(function(){
+        $("#img").css({left: '105%'});
+    },5000);
+}, 5000)
