@@ -4,6 +4,7 @@ function checkValidation(){
     if(login == "" || pass == "" || login == null || pass == null){
         if(login == ""){
             document.querySelector("#login").style.backgroundColor = "red";
+            $("#login").animate({rotate: '100deg'}, 1000)
         }
         if(pass == ""){
             document.querySelector("#pass").style.backgroundColor = "red";
@@ -11,14 +12,9 @@ function checkValidation(){
         return false;
     }
 }
-
-$("#img").animate({left: '-50%'}, 5000);
-setTimeout(function(){
+function loop(){
     $("#img").css({left: '105%'});
-},5000);
-setInterval(function(){
-    $("#img").animate({left: '-50%'}, 5000);
-    setTimeout(function(){
-        $("#img").css({left: '105%'});
-    },5000);
-}, 5000)
+    $("#img").animate({left: '-50%'}, 5000, loop);
+}
+
+loop();
