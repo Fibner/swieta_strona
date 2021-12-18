@@ -11,11 +11,11 @@ try{
 if($result -> num_rows > 0){
     foreach($result as $result){
         if($result['Pass'] == $password){
-            header("Location: ../main.php");
+            header("Location: ../main");
         }else{
-            header("Location: ../index.php");
+            header("Location: ../index");
         }
     }
 }else{
-    header("Location: ../index.php");
+    header("Location: ../index");
 }

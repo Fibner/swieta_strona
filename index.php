@@ -14,7 +14,7 @@
     <div id="img"><img src="img/sc.gif"></div>
     <div id="form">
         <h1>Halo kolego, zaloguj się pierw!</h1>
-        <form method="POST" action="scripts/login.php" onsubmit="return checkValidation()">
+        <form method="POST" action="scripts/login" onsubmit="return checkValidation()">
             <label>Login:</label>
             <input type="text" name="login" id="login">
             <br><br>
