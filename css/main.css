@@ -1,8 +1,8 @@
 body{
     margin: 0;
-    padding: ;
+    padding: 0;
     background-color: rgb(255, 255, 255);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Noto Serif', serif;
 }
 
 #container{
@@ -26,18 +26,30 @@ body{
     padding: 20px;
 }
 
+#content{
+    font-family: 'Dancing Script', cursive;
+     text-align: center;
+     font-size: 50px;
+}
+
 .option{
     float: left;
-    min-height: 10px;
-    height: 15px;
-    font-size: 20px;
+    min-height: 20px;
+    height: 25px;
+    font-size: 23px;
+    padding: 5px;
     margin-left:5%;
     text-align: center;
 }
 
 .option:hover{
-    background-color: wheat;
     cursor: pointer;
+    animation: link 2s;
+}
+
+@keyframes link{
+    from {color: white;}
+    to { color: rgb(218, 0, 0);}
 }
 
 link{
