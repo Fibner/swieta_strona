@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Serif&display=swap" rel="stylesheet">
-    <title>Witamy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -43,7 +42,10 @@
         <div style="display:flex;"></div>
 
         <div id="content">
-            <p>Idealny sklep na świąteczne zakupy</p>
+            <p1>Idealny sklep na świąteczne zakupy!</p1><br>
+            <p2>zapoznaj się z produktami na naszej stronie.</p2>
+
+            <hr>
 
 
         </div>
