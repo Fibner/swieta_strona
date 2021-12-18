@@ -3,6 +3,7 @@ body{
     animation-duration: 5s;
     animation-iteration-count: infinite;
     overflow: hidden;
+  
 }
 #img{
     overflow-x: hidden;
@@ -12,9 +13,22 @@ body{
 #form{
     text-align: center;
     margin-top: 15%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    letter-spacing: 2px;
+    font-size: 20px;
 }
 @keyframes bgColor{
     0% {background-color: white;}
     50% {background-color: red;}
     100% {background-color: white;}
+}
+
+.button{
+    border-radius: 50px;
+    width: 150px;
+    font-size: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: rgb(253, 227, 192);
+    padding: 5px;
+    border: none;
 }
