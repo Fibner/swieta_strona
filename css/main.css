@@ -1,31 +1,43 @@
 body{
-    background-color: pink;
+    margin: 0;
+    padding: ;
+    background-color: rgb(255, 255, 255);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #container{
-    width: 1800px;
+    width: auto;
     margin-top: auto;
     margin-left: auto;
 }
 
 #logo{
     text-align: center;
-    color: yellowgreen;
+    color: rgb(2, 110, 25);
     letter-spacing: 2px;
-    font-size: 50px;
+    font-size: 40px;
+    text-decoration: overline;
+    font-weight: bold;
 }
 
 #menu{
-    background-color: seagreen;
+    background-color: rgb(133, 0, 0);
     margin-top: 1%;
-    padding: 2%;
-    border: 5px dotted black;
+    padding: 20px;
 }
 
 .option{
     float: left;
-    min-height: ;
+    min-height: 10px;
+    height: 15px;
+    font-size: 20px;
+    margin-left:5%;
+    text-align: center;
+}
+
+.option:hover{
+    background-color: wheat;
+    cursor: pointer;
 }
 
 link{
