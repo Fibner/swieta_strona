@@ -21,7 +21,7 @@
             <label>Hasło:</label>
             <input type="password" name="pass" id="pass">
             <br>
-            <div id="err"></div>
+            <div id="err"><?php if(isset($_SESSION['errpass'])) echo "<br>".$_SESSION['errpass']; ?></div>
             <br>
             <input type="submit" value="Zaloguj">
         </form>

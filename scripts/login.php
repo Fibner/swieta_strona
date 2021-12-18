@@ -1,5 +1,6 @@
 <?php
 session_start();
+session_unset();
 require "functions.php";
 $login = $_POST['login'];
 $password = $_POST['pass'];
@@ -18,4 +19,5 @@ if($result -> num_rows > 0){
     }
 }else{
     header("Location: ../index");
+    $_SESSION['errpass'] = "Błędny login lub hasło!";
 }
