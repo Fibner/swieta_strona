@@ -17,29 +17,33 @@
         <div id="logo">
             <p>Witamy na stronie świątecznej!</p>
         </div>
+        <img class="img" src="img/1.png">
 
         <div id="menu">
 
             <a class="link" href="google.com">
-                <div class="option">dupa</div>
+                <div class="option">a</div>
             </a>
 
             <a class="link" href="google.com">
-                <div class="option">dupa</div>
+                <div class="option">b</div>
             </a>
 
             <a class="link" href="google.com">
-                <div class="option">dupa</div>
+                <div class="option">c</div>
             </a>
 
             <a class="link" href="google.com">
-                <div class="option">dupa</div>
+                <div class="option">d</div>
+            </a>
+
+            <a class="link" href="google.com">
+                <div class="option">e</div>
             </a>
 
             <div style="clear:both;"></div>
         </div>
 
-        <div style="display:flex;"></div>
 
         <div id="content">
             <p1>Idealny sklep na świąteczne zakupy!</p1><br>
@@ -49,28 +53,31 @@
 
         <div id="contentB">
             <p>GFDSAGSGRGAGD</p>
+            <img class="img2" src="img/2.jpg">
 
             <hr>
-            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ</button>
-
+            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ c</button>
         </div>
 
         <div id="contentC">
             <p>GFDSAGSGRGAGD</p>
+            <img class="img2" src="img/2.jpg">
 
             <hr>
-            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ</button>
-
+            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ d</button>
         </div>
 
         <div id="contentD">
             <p>GFDSAGSGRGAGD</p>
+            <img class="img2" src="img/2.jpg">
 
             <hr>
-            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ</button>
-
+            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ e</button>
         </div>
 
+        <div id="footer">
+            Filip Bałaga 3TIP/G
+        </div>
 
     </div>
 

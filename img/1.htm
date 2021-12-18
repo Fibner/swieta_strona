@@ -1,0 +1,1145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let i;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",i=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")&&this._isValidScriptType(i)?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}_isValidScriptType(e){return!e||""===e||"string"==typeof e&&["text/javascript","text/x-javascript","text/ecmascript","text/jscript","application/javascript","application/x-javascript","application/ecmascript","application/jscript","module"].includes(e.toLowerCase())}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript;n||console.error("WPRocket unable to document.write this: "+t);const i=document.createRange(),r=n.parentElement;let a=e.get(n);void 0===a&&(a=n.nextSibling,e.set(n,a));const o=document.createDocumentFragment();i.setStart(o,0),o.appendChild(i.createContextualFragment(t)),r.insertBefore(o,a)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+	<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" async=true>
+(function() {
+  var host = window.location.hostname;
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org'
+    .concat('/choice/', 'deCwlQAR_q3bc', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            event.source.postMessage(returnMsg, '*');
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+	<script>
+__tcfapi('addEventListener', 2, function(tcData, success) {
+    if (success) {
+        if (tcData.eventStatus == 'useractioncomplete' || tcData.eventStatus == 'tcloaded') {
+            var hasStoreOnDeviceConsent = tcData.purpose.consents[1] || false;
+
+            if (hasStoreOnDeviceConsent) {
+                var adsbygoogle_script = document.createElement('script');
+                adsbygoogle_script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+                document.head.appendChild(adsbygoogle_script);
+            }
+        }
+    }
+});
+</script>
+	<script data-ad-client="ca-pub-8822717667672157" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+<title>Christmas PNG Transparent Images | PNG All</title><link rel="stylesheet" href="https://www.pngall.com/wp-content/cache/min/1/ed022c7ef5377f192a4af3aeac9d87f5.css" media="all" data-minify="1" />
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="alternate" type="application/rss+xml" title="PNG All RSS Feed" href="https://www.pngall.com/feed" />
+<link rel="alternate" type="application/atom+xml" title="PNG All Atom Feed" href="https://www.pngall.com/feed/atom" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<link rel="pingback" href="https://www.pngall.com/xmlrpc.php" />
+<!--[if lt IE 9]>
+	<script src="https://www.pngall.com/wp-content/themes/boxes/js/css3-mediaqueries.js"></script>
+<![endif]-->
+
+<!--[if lt IE 7]>
+	<link rel="stylesheet" href="https://www.pngall.com/wp-content/themes/boxes/css/font-awesome-ie7.min.css">
+<![endif]-->
+<meta name='robots' content='max-image-preview:large' />
+
+<meta name="description"  content="Have you ever wondered about Christmas? Since the first time I realized that there really was a Santa Claus, you questioned other aspects of this amazing" />
+
+<meta name="keywords"  content="christmas,holidays &amp; events" />
+
+<script type="application/ld+json" class="aioseop-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.pngall.com/#organization","url":"https://www.pngall.com/","name":"PNG All","sameAs":[]},{"@type":"WebSite","@id":"https://www.pngall.com/#website","url":"https://www.pngall.com/","name":"PNG All","publisher":{"@id":"https://www.pngall.com/#organization"}},{"@type":"WebPage","@id":"https://www.pngall.com/christmas-png#webpage","url":"https://www.pngall.com/christmas-png","inLanguage":"en-US","name":"Christmas PNG Transparent Images","isPartOf":{"@id":"https://www.pngall.com/#website"},"breadcrumb":{"@id":"https://www.pngall.com/christmas-png#breadcrumblist"},"image":{"@type":"ImageObject","@id":"https://www.pngall.com/christmas-png#primaryimage","url":"https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-File.png","width":300,"height":300},"primaryImageOfPage":{"@id":"https://www.pngall.com/christmas-png#primaryimage"},"datePublished":"2016-05-09T13:11:50+00:00","dateModified":"2020-12-28T08:31:05+00:00"},{"@type":"Article","@id":"https://www.pngall.com/christmas-png#article","isPartOf":{"@id":"https://www.pngall.com/christmas-png#webpage"},"author":{"@id":"https://www.pngall.com/author/rojal#author"},"headline":"Christmas PNG Transparent Images","datePublished":"2016-05-09T13:11:50+00:00","dateModified":"2020-12-28T08:31:05+00:00","commentCount":0,"mainEntityOfPage":{"@id":"https://www.pngall.com/christmas-png#webpage"},"publisher":{"@id":"https://www.pngall.com/#organization"},"articleSection":"Holidays &amp; Events, Christmas","image":{"@type":"ImageObject","@id":"https://www.pngall.com/christmas-png#primaryimage","url":"https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-File.png","width":300,"height":300}},{"@type":"Person","@id":"https://www.pngall.com/author/rojal#author","name":"Rojal","sameAs":[],"image":{"@type":"ImageObject","@id":"https://www.pngall.com/#personlogo","url":"https://secure.gravatar.com/avatar/84d5cc5721a1ce3a23a196f35fba7267?s=96&d=mm&r=g","width":96,"height":96,"caption":"Rojal"}},{"@type":"BreadcrumbList","@id":"https://www.pngall.com/christmas-png#breadcrumblist","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.pngall.com/","url":"https://www.pngall.com/","name":"Find High-Quality Transparent PNG Images - PNG All"}},{"@type":"ListItem","position":2,"item":{"@type":"WebPage","@id":"https://www.pngall.com/christmas-png","url":"https://www.pngall.com/christmas-png","name":"Christmas PNG Transparent Images"}}]}]}</script>
+<link rel="canonical" href="https://www.pngall.com/christmas-png" />
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript" >
+				window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+				ga('create', 'UA-196746120-5', 'auto');
+				// Plugins
+				
+				ga('send', 'pageview');
+			</script>
+			<script type="rocketlazyloadscript" async src="https://www.google-analytics.com/analytics.js"></script>
+			
+
+<link rel="alternate" type="application/rss+xml" title="PNG All &raquo; Feed" href="https://www.pngall.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="PNG All &raquo; Comments Feed" href="https://www.pngall.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="PNG All &raquo; Christmas PNG Transparent Images Comments Feed" href="https://www.pngall.com/christmas-png/feed" />
+<meta content="boxes v.1.0" name="generator"/><meta content="Theme Junkie Framework v.1.0.5" name="generator"/><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+
+
+
+
+
+
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.pngall.com/wp-content/themes/boxes/js/jquery.min.js?ver=1.8.3' id='jquery-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.pngall.com/wp-content/themes/boxes/js/jquery-ui-1.8.5.custom.min.js?ver=1.8.5' id='jquery-ui-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.pngall.com/wp-content/themes/boxes/js/jquery.flexslider-min.js?ver=2.2.0' id='jquery-flexslider-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.pngall.com/wp-content/cache/min/1/wp-content/themes/boxes/js/superfish.js?ver=1639557726' id='jquery-superfish-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.pngall.com/wp-content/cache/min/1/wp-content/themes/boxes/js/html5.js?ver=1639557726' id='html5-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.pngall.com/wp-content/cache/min/1/wp-content/themes/boxes/js/custom.js?ver=1639557726' id='jquery-custom-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.pngall.com/wp-content/cache/min/1/wp-content/themes/boxes/functions/shortcodes/shortcodes.js?ver=1639557726' id='tj_shortcodes-js'></script>
+<link rel="https://api.w.org/" href="https://www.pngall.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.pngall.com/wp-json/wp/v2/posts/5710" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.pngall.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.pngall.com/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='https://www.pngall.com/?p=5710' />
+<style data-context="foundation-flickity-css">/*! Flickity v2.0.2
+http://flickity.metafizzy.co
+---------------------------------------------- */.flickity-enabled{position:relative}.flickity-enabled:focus{outline:0}.flickity-viewport{overflow:hidden;position:relative;height:100%}.flickity-slider{position:absolute;width:100%;height:100%}.flickity-enabled.is-draggable{-webkit-tap-highlight-color:transparent;tap-highlight-color:transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.flickity-enabled.is-draggable .flickity-viewport{cursor:move;cursor:-webkit-grab;cursor:grab}.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down{cursor:-webkit-grabbing;cursor:grabbing}.flickity-prev-next-button{position:absolute;top:50%;width:44px;height:44px;border:none;border-radius:50%;background:#fff;background:hsla(0,0%,100%,.75);cursor:pointer;-webkit-transform:translateY(-50%);transform:translateY(-50%)}.flickity-prev-next-button:hover{background:#fff}.flickity-prev-next-button:focus{outline:0;box-shadow:0 0 0 5px #09F}.flickity-prev-next-button:active{opacity:.6}.flickity-prev-next-button.previous{left:10px}.flickity-prev-next-button.next{right:10px}.flickity-rtl .flickity-prev-next-button.previous{left:auto;right:10px}.flickity-rtl .flickity-prev-next-button.next{right:auto;left:10px}.flickity-prev-next-button:disabled{opacity:.3;cursor:auto}.flickity-prev-next-button svg{position:absolute;left:20%;top:20%;width:60%;height:60%}.flickity-prev-next-button .arrow{fill:#333}.flickity-page-dots{position:absolute;width:100%;bottom:-25px;padding:0;margin:0;list-style:none;text-align:center;line-height:1}.flickity-rtl .flickity-page-dots{direction:rtl}.flickity-page-dots .dot{display:inline-block;width:10px;height:10px;margin:0 8px;background:#333;border-radius:50%;opacity:.25;cursor:pointer}.flickity-page-dots .dot.is-selected{opacity:1}</style><style data-context="foundation-slideout-css">.slideout-menu{position:fixed;left:0;top:0;bottom:0;right:auto;z-index:0;width:256px;overflow-y:auto;-webkit-overflow-scrolling:touch;display:none}.slideout-menu.pushit-right{left:auto;right:0}.slideout-panel{position:relative;z-index:1;will-change:transform}.slideout-open,.slideout-open .slideout-panel,.slideout-open body{overflow:hidden}.slideout-open .slideout-menu{display:block}.pushit{display:none}</style><!-- Custom Styling -->
+<style type="text/css">
+body { }        
+.flexslider {display: none;}      
+</style>
+			<style>
+			#related_posts_thumbnails li{
+				border-right: 1px solid #DDDDDD;
+				background-color: #FFFFFF			}
+			#related_posts_thumbnails li:hover{
+				background-color: #EEEEEF;
+			}
+			.relpost_content{
+				font-size:	16px;
+				color: 		#333333;
+			}
+			.relpost-block-single{
+				background-color: #FFFFFF;
+				border-right: 1px solid  #DDDDDD;
+				border-left: 1px solid  #DDDDDD;
+				margin-right: -1px;
+			}
+			.relpost-block-single:hover{
+				background-color: #EEEEEF;
+			}
+		</style>
+
+	<style>.ios7.web-app-mode.has-fixed header{ background-color: rgba(3,122,221,.88);}</style>
+<!-- START - Open Graph and Twitter Card Tags 3.1.1 -->
+ <!-- Facebook Open Graph -->
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:site_name" content="PNG All"/>
+  <meta property="og:title" content="Christmas PNG Transparent Images"/>
+  <meta property="og:url" content="https://www.pngall.com/christmas-png"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content="Have you ever wondered about Christmas? Since the first time I realized that there really was a Santa Claus, you questioned other aspects of this amazing holiday? Have you ever wondered where Christmas come from? Why is the tree? Where did the idea o"/>
+  <meta property="og:image" content="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-File.png"/>
+  <meta property="og:image:url" content="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-File.png"/>
+  <meta property="og:image:secure_url" content="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-File.png"/>
+  <meta property="og:image:width" content="300"/>
+  <meta property="og:image:height" content="300"/>
+  <meta property="article:publisher" content="http://www.facebook.com/pngall"/>
+ <!-- Google+ / Schema.org -->
+ <!-- Twitter Cards -->
+  <meta name="twitter:title" content="Christmas PNG Transparent Images"/>
+  <meta name="twitter:url" content="https://www.pngall.com/christmas-png"/>
+  <meta name="twitter:description" content="Have you ever wondered about Christmas? Since the first time I realized that there really was a Santa Claus, you questioned other aspects of this amazing holiday? Have you ever wondered where Christmas come from? Why is the tree? Where did the idea o"/>
+  <meta name="twitter:image" content="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-File.png"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+ <!-- SEO -->
+ <!-- Misc. tags -->
+ <!-- is_singular -->
+<!-- END - Open Graph and Twitter Card Tags 3.1.1 -->
+	
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="//services.vlitag.com/adv1/?q=457f6c4a3632d1de0e3963acb07a6c9f"></script><script type="rocketlazyloadscript"> var vitag = vitag || {};</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a294aabc37a8cd8"></script>
+</head>
+<body class="post-template-default single single-post postid-5710 single-format-standard chrome">
+		<script type="rocketlazyloadscript" async data-cfasync="false">
+       const url = new URL(window.location.href);
+       const clickID = url.searchParams.get("click_id");
+       const sourceID = url.searchParams.get("source_id");
+
+       const s = document.createElement("script");
+       s.dataset.cfasync = "false";
+       s.src = "https://system-notify.app/f/sdk.js?z=415910";
+       s.onload = (opts) => {
+           opts.zoneID = 415910;
+           opts.extClickID = clickID;
+           opts.subID1 = sourceID;
+           opts.actions.onPermissionGranted = () => {};
+           opts.actions.onPermissionDenied = () => {};
+           opts.actions.onAlreadySubscribed = () => {};
+           opts.actions.onError = () => {};
+       };
+       document.head.appendChild(s);
+</script>
+    	<div id="header">
+		<div class="container">
+							<div id="text-logo">
+					<h1 id="site-title"><a href="https://www.pngall.com">PNG All</a></h1>
+					<p id="site-desc"></p>
+				</div><!-- #text-logo -->
+						<div id="primary-nav" class="container">
+				<ul id="primary-navigation" class="nav"><li id="menu-item-14775" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-14775"><a href="https://www.pngall.com/">Home</a></li>
+<li id="menu-item-18456" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18456"><a href="https://www.pngall.com/categories">Categories</a></li>
+<li id="menu-item-14776" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14776"><a href="https://www.pngall.com/about">About</a></li>
+<li id="menu-item-14777" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14777"><a href="https://www.pngall.com/contact">Contact</a></li>
+<li id="menu-item-14778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14778"><a href="https://www.pngall.com/copyright-policy">Copyright Policy</a></li>
+<li id="menu-item-14783" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14783"><a href="https://www.pngall.com/privacy-policy">Privacy Policy</a></li>
+</ul>				
+								
+					<div class="btn-nav-right">
+						<i class="icon-reorder"></i> Menu 
+					</div><!-- .btn-nav-right -->
+							
+			</div><!-- #primary-nav -->
+			
+						
+			<div class="clear"></div>
+	
+		</div><!-- .container -->
+	</div><!-- #header -->
+		
+						
+
+			<nav id="mobile-menu">
+				<div class="container">
+					<ul id="responsive-menu" class="ul"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-14775"><a href="https://www.pngall.com/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18456"><a href="https://www.pngall.com/categories">Categories</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14776"><a href="https://www.pngall.com/about">About</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14777"><a href="https://www.pngall.com/contact">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14778"><a href="https://www.pngall.com/copyright-policy">Copyright Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14783"><a href="https://www.pngall.com/privacy-policy">Privacy Policy</a></li>
+</ul>				</div>
+				<!-- .container -->
+			</nav><!-- #mobile-menu -->
+							<div id="main" class="container">
+		<center><p><span style="font-size:0.8em">Advertisements</span>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Horizontal responsive PNG -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8822717667672157"
+     data-ad-slot="3562069872"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p></center><br>	<div id="content">
+	
+		
+			<article id="post-5710" class="post-5710 post type-post status-publish format-standard has-post-thumbnail hentry category-holidays-events tag-christmas">
+				
+								
+				<h1 class="entry-title">Christmas PNG Transparent Images</h1>
+<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/"> <!-- Breadcrumb NavXT 6.6.0 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Home Page" href="https://www.pngall.com" class="home" ><span property="name">Home</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the Holidays &amp; Events category" href="https://www.pngall.com/category/holidays-events" class="taxonomy category" ><span property="name">Holidays &amp; Events</span></a><meta property="position" content="2"></span> &gt; <span class="post post-post current-item">Christmas PNG Transparent Images</span> </div>
+				<p>
+					Download top and best high-quality free <strong>Christmas PNG Transparent Images</strong> backgrounds available in various sizes. To view the full PNG size resolution click on any of the below image thumbnail.
+					<br>
+					<br>
+					<strong>License Info</strong>: <a href="https://creativecommons.org/licenses/by-nc/4.0/" rel="license" target="_blank">Creative Commons 4.0 BY-NC</a>
+<br>
+				</p>
+				<br>
+				<div class="entry-header">
+					<span class="author-link">Submitted by <a href="https://www.pngall.com/author/rojal" title="Posts by Rojal" rel="author">Rojal</a></span> on May 9, 2016				</div><!-- .entry-header -->
+				
+				<div class="clear"></div>		
+						<div id = 'vdo_ai_div'></div><script>(function(v,d,o,ai){ai=d.createElement('script');ai.defer=true;ai.async=true;ai.src=v.location.protocol+o;d.head.appendChild(ai);})(window, document, '//a.vdo.ai/core/pngall/vdo.ai.js');</script>
+						
+				
+				<div class="clear"></div>
+
+													
+									
+									
+					<div class="entry-content">
+						<p>Have you ever wondered about Christmas? Since the first time I realized that there really was a Santa Claus, you questioned other aspects of this amazing holiday? Have you ever wondered where Christmas come from? Why is the tree? Where did the idea of ​​Santa Claus originate? Why this day is celebrated on December 25? With all of these symbols and holidays really mean? What is the prospect of God to these things? If you have been surprised when I first discovered the truth about Santa Claus, you will be more surprised than the rest of the story.</p>
+<p><strong>Christmas is not a Christian!</strong></p>
+<p>As shocking as it sounds, there is nothing Christian about Christmas. It is the people who created the word &#8220;Christmas&#8221; from &#8220;Mass of Christ.&#8221; Thus, in Christ&#8217;s name came to be associated with this holiday and millions have come to the conclusion that the Christian observance. The truth is that this festival with the same symbols and ceremonies practices for many centuries before Jesus was ever born.</p>
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div class="7e5d63c6540feda5e227514ef81ca30a" data-index="2" style="float: none; margin:25px 0 25px 0; text-align:center;">
+<p><span style="font-size:0.8em">Advertisements</span><style type="text/css"> 
+.adslot_1 { max-width: 300px; height: auto; margin:10px 0px; }
+@media (min-width:125px) { .adslot_1 { width:125px; height:125px; } } 
+@media (min-width:180px) { .adslot_1 { width:180px; height:150px; } } 
+@media (min-width:200px) { .adslot_1 { width:200px; height:200px; } } 
+@media (min-width:250px) { .adslot_1 { width:250px; height:250px; } } 
+@media (min-width:300px) { .adslot_1 { width:300px; height:600px; } } 
+@media (min-width:336px) { .adslot_1 { width:336px; height:280px; } } 
+@media (min-width:468px) { .adslot_1 { width:468px; height:60px; } } 
+@media (min-width:728px) { .adslot_1 { width:728px; height:90px; } }
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- pngall link ads unit -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8822717667672157"
+     data-ad-slot="5043863148"
+     data-ad-format="link"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+
+<p>The celebration of Christmas is not covered in the days of the apostles or the early New Testament church. Consider the words of Encyclopedia Americana, 1944 edition, which states:</p>
+<p>Christmas was according to many authorities, not celebrated in the first centuries of the Christian church, since the Christian usage in general was to celebrate the death of remarkable persons rather than their birth.</p>
+<p><strong>Download Christmas PNG images transparent gallery.</strong><br />
+
+		<style type="text/css">
+			#gallery-1 {
+				margin: auto;
+			}
+			#gallery-1 .gallery-item {
+				float: left;
+				margin-top: 10px;
+				text-align: center;
+				width: 33%;
+			}
+			#gallery-1 img {
+				border: 2px solid #cfcfcf;
+			}
+			#gallery-1 .gallery-caption {
+				margin-left: 0;
+			}
+			/* see gallery_shortcode() in wp-includes/media.php */
+		</style>
+		<div id='gallery-1' class='gallery galleryid-5710 gallery-columns-3 gallery-size-full'><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Corner"  href='https://www.pngall.com/christmas-png/download/58824'><div class="img_wrapper"><img width="640" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20480'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner.gif" /><noscript><img width="640" height="480" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner.gif" class="attachment-full size-full" alt="Christmas Corner" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner</strong><br>Resolution: 640 × 480<br>Size: 90 KB<br>Image Format: .gif<br><a href="https://www.pngall.com/christmas-png/download/58824" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas Garland Transparent"  href='https://www.pngall.com/christmas-png/download/58961'><div class="img_wrapper"><img width="512" height="144" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20144'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas Garland Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-Transparent-1.png" /><noscript><img width="512" height="144" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-Transparent-1.png" class="attachment-full size-full" alt="Holly Christmas Garland Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas Garland Transparent</strong><br>Resolution: 512 × 144<br>Size: 119 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58961" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas PNG Free Image"  href='https://www.pngall.com/christmas-png/download/58962'><div class="img_wrapper"><img width="1280" height="1191" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%201191'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas PNG Free Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Free-Image.png" /><noscript><img width="1280" height="1191" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Free-Image.png" class="attachment-full size-full" alt="Holly Christmas PNG Free Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas PNG Free Image</strong><br>Resolution: 1280 × 1191<br>Size: 229 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58962" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas PNG"  href='https://www.pngall.com/christmas-png/download/58963'><div class="img_wrapper"><img width="841" height="658" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20841%20658'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG.png" /><noscript><img width="841" height="658" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG.png" class="attachment-full size-full" alt="Holly Christmas PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas PNG</strong><br>Resolution: 841 × 658<br>Size: 270 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58963" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Holly Christmas PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58964'><div class="img_wrapper"><img width="862" height="884" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20862%20884'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Clipart.png" /><noscript><img width="862" height="884" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Clipart.png" class="attachment-full size-full" alt="Holly Christmas PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas PNG Clipart</strong><br>Resolution: 862 × 884<br>Size: 632 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58964" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas PNG File"  href='https://www.pngall.com/christmas-png/download/58965'><div class="img_wrapper"><img width="512" height="488" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20488'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas PNG File" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-File.png" /><noscript><img width="512" height="488" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-File.png" class="attachment-full size-full" alt="Holly Christmas PNG File" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas PNG File</strong><br>Resolution: 512 × 488<br>Size: 185 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58965" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas PNG Free Download"  href='https://www.pngall.com/christmas-png/download/58966'><div class="img_wrapper"><img width="880" height="720" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20880%20720'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas PNG Free Download" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Free-Download.png" /><noscript><img width="880" height="720" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Free-Download.png" class="attachment-full size-full" alt="Holly Christmas PNG Free Download" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas PNG Free Download</strong><br>Resolution: 880 × 720<br>Size: 96 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58966" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas PNG HD Image"  href='https://www.pngall.com/christmas-png/download/58967'><div class="img_wrapper"><img width="512" height="423" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20423'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas PNG HD Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-HD-Image.png" /><noscript><img width="512" height="423" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-HD-Image.png" class="attachment-full size-full" alt="Holly Christmas PNG HD Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas PNG HD Image</strong><br>Resolution: 512 × 423<br>Size: 75 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58967" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas PNG Image"  href='https://www.pngall.com/christmas-png/download/58968'><div class="img_wrapper"><img width="974" height="925" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20974%20925'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Image.png" /><noscript><img width="974" height="925" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Image.png" class="attachment-full size-full" alt="Holly Christmas PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas PNG Image</strong><br>Resolution: 974 × 925<br>Size: 871 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58968" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas PNG Picture"  href='https://www.pngall.com/christmas-png/download/58969'><div class="img_wrapper"><img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas PNG Picture" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Picture.png" /><noscript><img width="600" height="600" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-PNG-Picture.png" class="attachment-full size-full" alt="Holly Christmas PNG Picture" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas PNG Picture</strong><br>Resolution: 600 × 600<br>Size: 451 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58969" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas Transparent"  href='https://www.pngall.com/christmas-png/download/58970'><div class="img_wrapper"><img width="715" height="715" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20715%20715'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Transparent.png" /><noscript><img width="715" height="715" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Transparent.png" class="attachment-full size-full" alt="Holly Christmas Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas Transparent</strong><br>Resolution: 715 × 715<br>Size: 149 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58970" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas"  href='https://www.pngall.com/christmas-png/download/58971'><div class="img_wrapper"><img width="600" height="524" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20524'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas.png" /><noscript><img width="600" height="524" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas.png" class="attachment-full size-full" alt="Holly Christmas" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas</strong><br>Resolution: 600 × 524<br>Size: 216 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58971" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas Garland PNG"  href='https://www.pngall.com/christmas-png/download/58972'><div class="img_wrapper"><img width="1369" height="783" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201369%20783'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas Garland PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-PNG-1.png" /><noscript><img width="1369" height="783" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-PNG-1.png" class="attachment-full size-full" alt="Holly Christmas Garland PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas Garland PNG</strong><br>Resolution: 1369 × 783<br>Size: 288 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58972" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas Garland"  href='https://www.pngall.com/christmas-png/download/58973'><div class="img_wrapper"><img width="1721" height="369" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201721%20369'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas Garland" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-1.png" /><noscript><img width="1721" height="369" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-1.png" class="attachment-full size-full" alt="Holly Christmas Garland" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas Garland</strong><br>Resolution: 1721 × 369<br>Size: 1115 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58973" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas Garland PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58974'><div class="img_wrapper"><img width="512" height="204" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20204'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas Garland PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-PNG-Clipart-1.png" /><noscript><img width="512" height="204" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-PNG-Clipart-1.png" class="attachment-full size-full" alt="Holly Christmas Garland PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas Garland PNG Clipart</strong><br>Resolution: 512 × 204<br>Size: 149 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58974" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Holly Christmas Garland PNG Image"  href='https://www.pngall.com/christmas-png/download/58975'><div class="img_wrapper"><img width="850" height="533" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20850%20533'%3E%3C/svg%3E" class="attachment-full size-full" alt="Holly Christmas Garland PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-PNG-Image-1.png" /><noscript><img width="850" height="533" src="https://www.pngall.com/wp-content/uploads/5/Holly-Christmas-Garland-PNG-Image-1.png" class="attachment-full size-full" alt="Holly Christmas Garland PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Holly Christmas Garland PNG Image</strong><br>Resolution: 850 × 533<br>Size: 591 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58975" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Download PNG"  href='https://www.pngall.com/christmas-png/download/5732'><div class="img_wrapper"><img width="333" height="431" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20333%20431'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Download PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-Download-PNG.png" /><noscript><img width="333" height="431" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-Download-PNG.png" class="attachment-full size-full" alt="Christmas Download PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Download PNG</strong><br>Resolution: 333 × 431<br>Size: 28 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5732" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Free Download PNG"  href='https://www.pngall.com/christmas-png/download/5736'><div class="img_wrapper"><img width="600" height="269" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20269'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Free Download PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-Free-Download-PNG.png" /><noscript><img width="600" height="269" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-Free-Download-PNG.png" class="attachment-full size-full" alt="Christmas Free Download PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Free Download PNG</strong><br>Resolution: 600 × 269<br>Size: 186 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5736" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Free PNG Image"  href='https://www.pngall.com/christmas-png/download/5756'><div class="img_wrapper"><img width="3066" height="977" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203066%20977'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Free PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-Free-PNG-Image.png" /><noscript><img width="3066" height="977" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-Free-PNG-Image.png" class="attachment-full size-full" alt="Christmas Free PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Free PNG Image</strong><br>Resolution: 3066 × 977<br>Size: 1342 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5756" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas PNG Clipart"  href='https://www.pngall.com/christmas-png/download/5769'><div class="img_wrapper"><img width="796" height="1004" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20796%201004'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-Clipart.png" /><noscript><img width="796" height="1004" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-Clipart.png" class="attachment-full size-full" alt="Christmas PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas PNG Clipart</strong><br>Resolution: 796 × 1004<br>Size: 592 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5769" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas PNG File"  href='https://www.pngall.com/christmas-png/download/5776'><div class="img_wrapper"><img width="300" height="300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas PNG File" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-File.png" /><noscript><img width="300" height="300" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-File.png" class="attachment-full size-full" alt="Christmas PNG File" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas PNG File</strong><br>Resolution: 300 × 300<br>Size: 92 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5776" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas PNG HD"  href='https://www.pngall.com/christmas-png/download/5791'><div class="img_wrapper"><img width="640" height="827" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20827'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas PNG HD" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-HD.png" /><noscript><img width="640" height="827" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-HD.png" class="attachment-full size-full" alt="Christmas PNG HD" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas PNG HD</strong><br>Resolution: 640 × 827<br>Size: 751 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5791" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas PNG Image"  href='https://www.pngall.com/christmas-png/download/5797'><div class="img_wrapper"><img width="350" height="177" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20350%20177'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-Image.png" /><noscript><img width="350" height="177" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-Image.png" class="attachment-full size-full" alt="Christmas PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas PNG Image</strong><br>Resolution: 350 × 177<br>Size: 85 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5797" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas PNG Pic"  href='https://www.pngall.com/christmas-png/download/5801'><div class="img_wrapper"><img width="464" height="215" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20464%20215'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas PNG Pic" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-Pic.png" /><noscript><img width="464" height="215" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-Pic.png" class="attachment-full size-full" alt="Christmas PNG Pic" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas PNG Pic</strong><br>Resolution: 464 × 215<br>Size: 150 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5801" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas PNG Picture"  href='https://www.pngall.com/christmas-png/download/5823'><div class="img_wrapper"><img width="1280" height="483" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20483'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas PNG Picture" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-Picture.png" /><noscript><img width="1280" height="483" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG-Picture.png" class="attachment-full size-full" alt="Christmas PNG Picture" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas PNG Picture</strong><br>Resolution: 1280 × 483<br>Size: 927 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5823" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas PNG"  href='https://www.pngall.com/christmas-png/download/5830'><div class="img_wrapper"><img width="600" height="542" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20542'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG.png" /><noscript><img width="600" height="542" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-PNG.png" class="attachment-full size-full" alt="Christmas PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas PNG</strong><br>Resolution: 600 × 542<br>Size: 263 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5830" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Transparent"  href='https://www.pngall.com/christmas-png/download/5845'><div class="img_wrapper"><img width="3294" height="2460" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203294%202460'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-Transparent.png" /><noscript><img width="3294" height="2460" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas-Transparent.png" class="attachment-full size-full" alt="Christmas Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Transparent</strong><br>Resolution: 3294 × 2460<br>Size: 3656 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5845" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas"  href='https://www.pngall.com/christmas-png/download/5847'><div class="img_wrapper"><img width="3044" height="1076" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203044%201076'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas" data-lazy-src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas.png" /><noscript><img width="3044" height="1076" src="https://www.pngall.com/wp-content/uploads/2016/05/Christmas.png" class="attachment-full size-full" alt="Christmas" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas</strong><br>Resolution: 3044 × 1076<br>Size: 577 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/5847" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Corner PNG Image"  href='https://www.pngall.com/christmas-png/download/58808'><div class="img_wrapper"><img width="545" height="548" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20545%20548'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Image.png" /><noscript><img width="545" height="548" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Image.png" class="attachment-full size-full" alt="Christmas Corner PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner PNG Image</strong><br>Resolution: 545 × 548<br>Size: 207 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58808" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Corner PNG Pic"  href='https://www.pngall.com/christmas-png/download/58811'><div class="img_wrapper"><img width="510" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20510%20512'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner PNG Pic" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Pic.png" /><noscript><img width="510" height="512" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Pic.png" class="attachment-full size-full" alt="Christmas Corner PNG Pic" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner PNG Pic</strong><br>Resolution: 510 × 512<br>Size: 215 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58811" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Corner PNG Picture"  href='https://www.pngall.com/christmas-png/download/58816'><div class="img_wrapper"><img width="2441" height="2793" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202441%202793'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner PNG Picture" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Picture.png" /><noscript><img width="2441" height="2793" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Picture.png" class="attachment-full size-full" alt="Christmas Corner PNG Picture" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner PNG Picture</strong><br>Resolution: 2441 × 2793<br>Size: 824 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58816" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Corner PNG"  href='https://www.pngall.com/christmas-png/download/58820'><div class="img_wrapper"><img width="620" height="661" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20620%20661'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG.png" /><noscript><img width="620" height="661" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG.png" class="attachment-full size-full" alt="Christmas Corner PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner PNG</strong><br>Resolution: 620 × 661<br>Size: 364 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58820" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Corner Transparent"  href='https://www.pngall.com/christmas-png/download/58821'><div class="img_wrapper"><img width="600" height="504" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20504'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-Transparent.png" /><noscript><img width="600" height="504" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-Transparent.png" class="attachment-full size-full" alt="Christmas Corner Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner Transparent</strong><br>Resolution: 600 × 504<br>Size: 376 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58821" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58827'><div class="img_wrapper"><img width="1400" height="1032" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201400%201032'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Clipart.png" /><noscript><img width="1400" height="1032" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Clipart.png" class="attachment-full size-full" alt="Christmas Gift PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Clipart</strong><br>Resolution: 1400 × 1032<br>Size: 348 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58827" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG Download Image"  href='https://www.pngall.com/christmas-png/download/58828'><div class="img_wrapper"><img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Download Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Download-Image.png" /><noscript><img width="512" height="512" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Download-Image.png" class="attachment-full size-full" alt="Christmas Gift PNG Download Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Download Image</strong><br>Resolution: 512 × 512<br>Size: 176 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58828" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG File"  href='https://www.pngall.com/christmas-png/download/58830'><div class="img_wrapper"><img width="715" height="559" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20715%20559'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG File" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-File.png" /><noscript><img width="715" height="559" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-File.png" class="attachment-full size-full" alt="Christmas Gift PNG File" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG File</strong><br>Resolution: 715 × 559<br>Size: 394 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58830" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG Free Download"  href='https://www.pngall.com/christmas-png/download/58831'><div class="img_wrapper"><img width="805" height="621" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20805%20621'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Free Download" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Free-Download.png" /><noscript><img width="805" height="621" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Free-Download.png" class="attachment-full size-full" alt="Christmas Gift PNG Free Download" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Free Download</strong><br>Resolution: 805 × 621<br>Size: 623 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58831" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Gift PNG Free Image"  href='https://www.pngall.com/christmas-png/download/58833'><div class="img_wrapper"><img width="535" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20535%20600'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Free Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Free-Image.png" /><noscript><img width="535" height="600" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Free-Image.png" class="attachment-full size-full" alt="Christmas Gift PNG Free Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Free Image</strong><br>Resolution: 535 × 600<br>Size: 186 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58833" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG HD Image"  href='https://www.pngall.com/christmas-png/download/58834'><div class="img_wrapper"><img width="895" height="609" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20895%20609'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG HD Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-HD-Image.png" /><noscript><img width="895" height="609" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-HD-Image.png" class="attachment-full size-full" alt="Christmas Gift PNG HD Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG HD Image</strong><br>Resolution: 895 × 609<br>Size: 648 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58834" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG High Quality Image"  href='https://www.pngall.com/christmas-png/download/58835'><div class="img_wrapper"><img width="900" height="671" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20900%20671'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG High Quality Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-High-Quality-Image.png" /><noscript><img width="900" height="671" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-High-Quality-Image.png" class="attachment-full size-full" alt="Christmas Gift PNG High Quality Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG High Quality Image</strong><br>Resolution: 900 × 671<br>Size: 814 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58835" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG Image File"  href='https://www.pngall.com/christmas-png/download/58836'><div class="img_wrapper"><img width="512" height="330" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20330'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Image File" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Image-File.png" /><noscript><img width="512" height="330" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Image-File.png" class="attachment-full size-full" alt="Christmas Gift PNG Image File" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Image File</strong><br>Resolution: 512 × 330<br>Size: 162 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58836" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG Image HD"  href='https://www.pngall.com/christmas-png/download/58838'><div class="img_wrapper"><img width="512" height="305" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20305'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Image HD" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Image-HD.png" /><noscript><img width="512" height="305" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Image-HD.png" class="attachment-full size-full" alt="Christmas Gift PNG Image HD" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Image HD</strong><br>Resolution: 512 × 305<br>Size: 195 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58838" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Gift PNG Image"  href='https://www.pngall.com/christmas-png/download/58839'><div class="img_wrapper"><img width="2423" height="3363" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202423%203363'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Image.png" /><noscript><img width="2423" height="3363" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Image.png" class="attachment-full size-full" alt="Christmas Gift PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Image</strong><br>Resolution: 2423 × 3363<br>Size: 974 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58839" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG Images"  href='https://www.pngall.com/christmas-png/download/58840'><div class="img_wrapper"><img width="512" height="320" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20320'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Images" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Images.png" /><noscript><img width="512" height="320" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Images.png" class="attachment-full size-full" alt="Christmas Gift PNG Images" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Images</strong><br>Resolution: 512 × 320<br>Size: 177 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58840" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG Photo"  href='https://www.pngall.com/christmas-png/download/58841'><div class="img_wrapper"><img width="512" height="352" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20352'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Photo" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Photo.png" /><noscript><img width="512" height="352" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Photo.png" class="attachment-full size-full" alt="Christmas Gift PNG Photo" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Photo</strong><br>Resolution: 512 × 352<br>Size: 133 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58841" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG Pic"  href='https://www.pngall.com/christmas-png/download/58842'><div class="img_wrapper"><img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Pic" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Pic.png" /><noscript><img width="600" height="600" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Pic.png" class="attachment-full size-full" alt="Christmas Gift PNG Pic" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Pic</strong><br>Resolution: 600 × 600<br>Size: 159 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58842" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG Picture"  href='https://www.pngall.com/christmas-png/download/58843'><div class="img_wrapper"><img width="1000" height="964" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20964'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG Picture" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Picture.png" /><noscript><img width="1000" height="964" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG-Picture.png" class="attachment-full size-full" alt="Christmas Gift PNG Picture" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG Picture</strong><br>Resolution: 1000 × 964<br>Size: 236 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58843" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift PNG"  href='https://www.pngall.com/christmas-png/download/58844'><div class="img_wrapper"><img width="1000" height="722" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20722'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG.png" /><noscript><img width="1000" height="722" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-PNG.png" class="attachment-full size-full" alt="Christmas Gift PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift PNG</strong><br>Resolution: 1000 × 722<br>Size: 650 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58844" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Gift Transparent"  href='https://www.pngall.com/christmas-png/download/58845'><div class="img_wrapper"><img width="1600" height="1441" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201600%201441'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-Transparent.png" /><noscript><img width="1600" height="1441" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift-Transparent.png" class="attachment-full size-full" alt="Christmas Gift Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift Transparent</strong><br>Resolution: 1600 × 1441<br>Size: 666 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58845" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Gift"  href='https://www.pngall.com/christmas-png/download/58846'><div class="img_wrapper"><img width="778" height="856" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20778%20856'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Gift" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift.png" /><noscript><img width="778" height="856" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Gift.png" class="attachment-full size-full" alt="Christmas Gift" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Gift</strong><br>Resolution: 778 × 856<br>Size: 353 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58846" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Star PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58847'><div class="img_wrapper"><img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Star PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Clipart.png" /><noscript><img width="600" height="600" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Clipart.png" class="attachment-full size-full" alt="Christmas Star PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Star PNG Clipart</strong><br>Resolution: 600 × 600<br>Size: 95 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58847" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Star PNG Free Download"  href='https://www.pngall.com/christmas-png/download/58848'><div class="img_wrapper"><img width="1017" height="980" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201017%20980'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Star PNG Free Download" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Free-Download.png" /><noscript><img width="1017" height="980" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Free-Download.png" class="attachment-full size-full" alt="Christmas Star PNG Free Download" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Star PNG Free Download</strong><br>Resolution: 1017 × 980<br>Size: 85 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58848" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Star PNG Free Image"  href='https://www.pngall.com/christmas-png/download/58849'><div class="img_wrapper"><img width="512" height="434" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20434'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Star PNG Free Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Free-Image.png" /><noscript><img width="512" height="434" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Free-Image.png" class="attachment-full size-full" alt="Christmas Star PNG Free Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Star PNG Free Image</strong><br>Resolution: 512 × 434<br>Size: 50 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58849" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Star PNG Image"  href='https://www.pngall.com/christmas-png/download/58850'><div class="img_wrapper"><img width="1000" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%201000'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Star PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Image.png" /><noscript><img width="1000" height="1000" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Image.png" class="attachment-full size-full" alt="Christmas Star PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Star PNG Image</strong><br>Resolution: 1000 × 1000<br>Size: 941 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58850" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Star PNG Picture"  href='https://www.pngall.com/christmas-png/download/58851'><div class="img_wrapper"><img width="598" height="580" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20598%20580'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Star PNG Picture" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Picture.png" /><noscript><img width="598" height="580" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG-Picture.png" class="attachment-full size-full" alt="Christmas Star PNG Picture" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Star PNG Picture</strong><br>Resolution: 598 × 580<br>Size: 189 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58851" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Star PNG"  href='https://www.pngall.com/christmas-png/download/58852'><div class="img_wrapper"><img width="678" height="226" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20678%20226'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Star PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG.png" /><noscript><img width="678" height="226" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-PNG.png" class="attachment-full size-full" alt="Christmas Star PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Star PNG</strong><br>Resolution: 678 × 226<br>Size: 120 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58852" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Star Transparent"  href='https://www.pngall.com/christmas-png/download/58853'><div class="img_wrapper"><img width="610" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20610%20800'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Star Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-Transparent.png" /><noscript><img width="610" height="800" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star-Transparent.png" class="attachment-full size-full" alt="Christmas Star Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Star Transparent</strong><br>Resolution: 610 × 800<br>Size: 389 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58853" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Star"  href='https://www.pngall.com/christmas-png/download/58854'><div class="img_wrapper"><img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Star" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star.png" /><noscript><img width="512" height="512" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Star.png" class="attachment-full size-full" alt="Christmas Star" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Star</strong><br>Resolution: 512 × 512<br>Size: 13 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58854" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Cute Christmas PNG Image"  href='https://www.pngall.com/christmas-png/download/58855'><div class="img_wrapper"><img width="880" height="1151" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20880%201151'%3E%3C/svg%3E" class="attachment-full size-full" alt="Cute Christmas PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Cute-Christmas-PNG-Image.png" /><noscript><img width="880" height="1151" src="https://www.pngall.com/wp-content/uploads/5/Cute-Christmas-PNG-Image.png" class="attachment-full size-full" alt="Cute Christmas PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Cute Christmas PNG Image</strong><br>Resolution: 880 × 1151<br>Size: 189 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58855" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Cute Christmas PNG"  href='https://www.pngall.com/christmas-png/download/58856'><div class="img_wrapper"><img width="1222" height="1733" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201222%201733'%3E%3C/svg%3E" class="attachment-full size-full" alt="Cute Christmas PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Cute-Christmas-PNG.png" /><noscript><img width="1222" height="1733" src="https://www.pngall.com/wp-content/uploads/5/Cute-Christmas-PNG.png" class="attachment-full size-full" alt="Cute Christmas PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Cute Christmas PNG</strong><br>Resolution: 1222 × 1733<br>Size: 1897 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58856" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Cute Christmas Transparent"  href='https://www.pngall.com/christmas-png/download/58857'><div class="img_wrapper"><img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="attachment-full size-full" alt="Cute Christmas Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Cute-Christmas-Transparent.png" /><noscript><img width="512" height="512" src="https://www.pngall.com/wp-content/uploads/5/Cute-Christmas-Transparent.png" class="attachment-full size-full" alt="Cute Christmas Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Cute Christmas Transparent</strong><br>Resolution: 512 × 512<br>Size: 118 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58857" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Cute Christmas"  href='https://www.pngall.com/christmas-png/download/58858'><div class="img_wrapper"><img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="attachment-full size-full" alt="Cute Christmas" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Cute-Christmas.png" /><noscript><img width="512" height="512" src="https://www.pngall.com/wp-content/uploads/5/Cute-Christmas.png" class="attachment-full size-full" alt="Cute Christmas" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Cute Christmas</strong><br>Resolution: 512 × 512<br>Size: 106 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58858" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Gold Christmas PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58859'><div class="img_wrapper"><img width="3000" height="4471" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203000%204471'%3E%3C/svg%3E" class="attachment-full size-full" alt="Gold Christmas PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG-Clipart.png" /><noscript><img width="3000" height="4471" src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG-Clipart.png" class="attachment-full size-full" alt="Gold Christmas PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Gold Christmas PNG Clipart</strong><br>Resolution: 3000 × 4471<br>Size: 6678 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58859" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Gold Christmas PNG Free Download"  href='https://www.pngall.com/christmas-png/download/58860'><div class="img_wrapper"><img width="512" height="360" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20360'%3E%3C/svg%3E" class="attachment-full size-full" alt="Gold Christmas PNG Free Download" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG-Free-Download.png" /><noscript><img width="512" height="360" src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG-Free-Download.png" class="attachment-full size-full" alt="Gold Christmas PNG Free Download" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Gold Christmas PNG Free Download</strong><br>Resolution: 512 × 360<br>Size: 201 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58860" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Gold Christmas PNG Image"  href='https://www.pngall.com/christmas-png/download/58861'><div class="img_wrapper"><img width="918" height="774" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20918%20774'%3E%3C/svg%3E" class="attachment-full size-full" alt="Gold Christmas PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG-Image.png" /><noscript><img width="918" height="774" src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG-Image.png" class="attachment-full size-full" alt="Gold Christmas PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Gold Christmas PNG Image</strong><br>Resolution: 918 × 774<br>Size: 225 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58861" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Gold Christmas PNG Picture"  href='https://www.pngall.com/christmas-png/download/58862'><div class="img_wrapper"><img width="512" height="338" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20338'%3E%3C/svg%3E" class="attachment-full size-full" alt="Gold Christmas PNG Picture" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG-Picture.png" /><noscript><img width="512" height="338" src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG-Picture.png" class="attachment-full size-full" alt="Gold Christmas PNG Picture" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Gold Christmas PNG Picture</strong><br>Resolution: 512 × 338<br>Size: 283 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58862" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Gold Christmas PNG"  href='https://www.pngall.com/christmas-png/download/58863'><div class="img_wrapper"><img width="1334" height="1200" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201334%201200'%3E%3C/svg%3E" class="attachment-full size-full" alt="Gold Christmas PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG.png" /><noscript><img width="1334" height="1200" src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-PNG.png" class="attachment-full size-full" alt="Gold Christmas PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Gold Christmas PNG</strong><br>Resolution: 1334 × 1200<br>Size: 697 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58863" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Gold Christmas Transparent"  href='https://www.pngall.com/christmas-png/download/58864'><div class="img_wrapper"><img width="1565" height="2048" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201565%202048'%3E%3C/svg%3E" class="attachment-full size-full" alt="Gold Christmas Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-Transparent.png" /><noscript><img width="1565" height="2048" src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas-Transparent.png" class="attachment-full size-full" alt="Gold Christmas Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Gold Christmas Transparent</strong><br>Resolution: 1565 × 2048<br>Size: 1643 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58864" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Gold Christmas"  href='https://www.pngall.com/christmas-png/download/58866'><div class="img_wrapper"><img width="536" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20536%20600'%3E%3C/svg%3E" class="attachment-full size-full" alt="Gold Christmas" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas.png" /><noscript><img width="536" height="600" src="https://www.pngall.com/wp-content/uploads/5/Gold-Christmas.png" class="attachment-full size-full" alt="Gold Christmas" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Gold Christmas</strong><br>Resolution: 536 × 600<br>Size: 67 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58866" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Golden Christmas Star PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58867'><div class="img_wrapper"><img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="attachment-full size-full" alt="Golden Christmas Star PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Clipart.png" /><noscript><img width="512" height="512" src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Clipart.png" class="attachment-full size-full" alt="Golden Christmas Star PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Golden Christmas Star PNG Clipart</strong><br>Resolution: 512 × 512<br>Size: 90 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58867" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Golden Christmas Star PNG File"  href='https://www.pngall.com/christmas-png/download/58869'><div class="img_wrapper"><img width="512" height="486" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20486'%3E%3C/svg%3E" class="attachment-full size-full" alt="Golden Christmas Star PNG File" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-File.png" /><noscript><img width="512" height="486" src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-File.png" class="attachment-full size-full" alt="Golden Christmas Star PNG File" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Golden Christmas Star PNG File</strong><br>Resolution: 512 × 486<br>Size: 261 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58869" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Golden Christmas Star PNG Free Download"  href='https://www.pngall.com/christmas-png/download/58870'><div class="img_wrapper"><img width="1000" height="1000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%201000'%3E%3C/svg%3E" class="attachment-full size-full" alt="Golden Christmas Star PNG Free Download" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Free-Download.png" /><noscript><img width="1000" height="1000" src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Free-Download.png" class="attachment-full size-full" alt="Golden Christmas Star PNG Free Download" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Golden Christmas Star PNG Free Download</strong><br>Resolution: 1000 × 1000<br>Size: 681 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58870" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Golden Christmas Star PNG Free Image"  href='https://www.pngall.com/christmas-png/download/58871'><div class="img_wrapper"><img width="512" height="317" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20317'%3E%3C/svg%3E" class="attachment-full size-full" alt="Golden Christmas Star PNG Free Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Free-Image.png" /><noscript><img width="512" height="317" src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Free-Image.png" class="attachment-full size-full" alt="Golden Christmas Star PNG Free Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Golden Christmas Star PNG Free Image</strong><br>Resolution: 512 × 317<br>Size: 119 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58871" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Golden Christmas Star PNG Image"  href='https://www.pngall.com/christmas-png/download/58873'><div class="img_wrapper"><img width="565" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20565%20600'%3E%3C/svg%3E" class="attachment-full size-full" alt="Golden Christmas Star PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Image.png" /><noscript><img width="565" height="600" src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Image.png" class="attachment-full size-full" alt="Golden Christmas Star PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Golden Christmas Star PNG Image</strong><br>Resolution: 565 × 600<br>Size: 27 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58873" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Golden Christmas Star PNG Picture"  href='https://www.pngall.com/christmas-png/download/58874'><div class="img_wrapper"><img width="800" height="800" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20800'%3E%3C/svg%3E" class="attachment-full size-full" alt="Golden Christmas Star PNG Picture" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Picture.png" /><noscript><img width="800" height="800" src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG-Picture.png" class="attachment-full size-full" alt="Golden Christmas Star PNG Picture" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Golden Christmas Star PNG Picture</strong><br>Resolution: 800 × 800<br>Size: 430 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58874" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Golden Christmas Star PNG"  href='https://www.pngall.com/christmas-png/download/58875'><div class="img_wrapper"><img width="900" height="770" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20900%20770'%3E%3C/svg%3E" class="attachment-full size-full" alt="Golden Christmas Star PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG.png" /><noscript><img width="900" height="770" src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-PNG.png" class="attachment-full size-full" alt="Golden Christmas Star PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Golden Christmas Star PNG</strong><br>Resolution: 900 × 770<br>Size: 111 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58875" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Golden Christmas Star Transparent"  href='https://www.pngall.com/christmas-png/download/58876'><div class="img_wrapper"><img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="attachment-full size-full" alt="Golden Christmas Star Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-Transparent.png" /><noscript><img width="512" height="512" src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star-Transparent.png" class="attachment-full size-full" alt="Golden Christmas Star Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Golden Christmas Star Transparent</strong><br>Resolution: 512 × 512<br>Size: 10 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58876" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Golden Christmas Star"  href='https://www.pngall.com/christmas-png/download/58877'><div class="img_wrapper"><img width="1120" height="1076" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201120%201076'%3E%3C/svg%3E" class="attachment-full size-full" alt="Golden Christmas Star" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star.png" /><noscript><img width="1120" height="1076" src="https://www.pngall.com/wp-content/uploads/5/Golden-Christmas-Star.png" class="attachment-full size-full" alt="Golden Christmas Star" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Golden Christmas Star</strong><br>Resolution: 1120 × 1076<br>Size: 619 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58877" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Picsart Christmas PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58890'><div class="img_wrapper"><img width="1280" height="720" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201280%20720'%3E%3C/svg%3E" class="attachment-full size-full" alt="Picsart Christmas PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Picsart-Christmas-PNG-Clipart.png" /><noscript><img width="1280" height="720" src="https://www.pngall.com/wp-content/uploads/5/Picsart-Christmas-PNG-Clipart.png" class="attachment-full size-full" alt="Picsart Christmas PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Picsart Christmas PNG Clipart</strong><br>Resolution: 1280 × 720<br>Size: 229 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58890" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Picsart Christmas PNG Image"  href='https://www.pngall.com/christmas-png/download/58891'><div class="img_wrapper"><img width="640" height="480" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20480'%3E%3C/svg%3E" class="attachment-full size-full" alt="Picsart Christmas PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Picsart-Christmas-PNG-Image.png" /><noscript><img width="640" height="480" src="https://www.pngall.com/wp-content/uploads/5/Picsart-Christmas-PNG-Image.png" class="attachment-full size-full" alt="Picsart Christmas PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Picsart Christmas PNG Image</strong><br>Resolution: 640 × 480<br>Size: 391 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58891" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Picsart Christmas Transparent"  href='https://www.pngall.com/christmas-png/download/58892'><div class="img_wrapper"><img width="634" height="481" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20634%20481'%3E%3C/svg%3E" class="attachment-full size-full" alt="Picsart Christmas Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Picsart-Christmas-Transparent.png" /><noscript><img width="634" height="481" src="https://www.pngall.com/wp-content/uploads/5/Picsart-Christmas-Transparent.png" class="attachment-full size-full" alt="Picsart Christmas Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Picsart Christmas Transparent</strong><br>Resolution: 634 × 481<br>Size: 253 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58892" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Picsart Christmas"  href='https://www.pngall.com/christmas-png/download/58893'><div class="img_wrapper"><img width="2000" height="2000" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202000%202000'%3E%3C/svg%3E" class="attachment-full size-full" alt="Picsart Christmas" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Picsart-Christmas.png" /><noscript><img width="2000" height="2000" src="https://www.pngall.com/wp-content/uploads/5/Picsart-Christmas.png" class="attachment-full size-full" alt="Picsart Christmas" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Picsart Christmas</strong><br>Resolution: 2000 × 2000<br>Size: 1439 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58893" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Pink Christmas PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58894'><div class="img_wrapper"><img width="500" height="500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" class="attachment-full size-full" alt="Pink Christmas PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas-PNG-Clipart.png" /><noscript><img width="500" height="500" src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas-PNG-Clipart.png" class="attachment-full size-full" alt="Pink Christmas PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Pink Christmas PNG Clipart</strong><br>Resolution: 500 × 500<br>Size: 71 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58894" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Pink Christmas PNG Image"  href='https://www.pngall.com/christmas-png/download/58895'><div class="img_wrapper"><img width="1232" height="2500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201232%202500'%3E%3C/svg%3E" class="attachment-full size-full" alt="Pink Christmas PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas-PNG-Image.png" /><noscript><img width="1232" height="2500" src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas-PNG-Image.png" class="attachment-full size-full" alt="Pink Christmas PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Pink Christmas PNG Image</strong><br>Resolution: 1232 × 2500<br>Size: 552 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58895" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Pink Christmas PNG"  href='https://www.pngall.com/christmas-png/download/58898'><div class="img_wrapper"><img width="2500" height="3070" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202500%203070'%3E%3C/svg%3E" class="attachment-full size-full" alt="Pink Christmas PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas-PNG.png" /><noscript><img width="2500" height="3070" src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas-PNG.png" class="attachment-full size-full" alt="Pink Christmas PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Pink Christmas PNG</strong><br>Resolution: 2500 × 3070<br>Size: 3179 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58898" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Pink Christmas Transparent"  href='https://www.pngall.com/christmas-png/download/58899'><div class="img_wrapper"><img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="attachment-full size-full" alt="Pink Christmas Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas-Transparent.png" /><noscript><img width="512" height="512" src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas-Transparent.png" class="attachment-full size-full" alt="Pink Christmas Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Pink Christmas Transparent</strong><br>Resolution: 512 × 512<br>Size: 165 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58899" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Pink Christmas"  href='https://www.pngall.com/christmas-png/download/58900'><div class="img_wrapper"><img width="619" height="720" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20619%20720'%3E%3C/svg%3E" class="attachment-full size-full" alt="Pink Christmas" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas.png" /><noscript><img width="619" height="720" src="https://www.pngall.com/wp-content/uploads/5/Pink-Christmas.png" class="attachment-full size-full" alt="Pink Christmas" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Pink Christmas</strong><br>Resolution: 619 × 720<br>Size: 150 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58900" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Retro Christmas PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58901'><div class="img_wrapper"><img width="640" height="935" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20935'%3E%3C/svg%3E" class="attachment-full size-full" alt="Retro Christmas PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-Clipart.png" /><noscript><img width="640" height="935" src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-Clipart.png" class="attachment-full size-full" alt="Retro Christmas PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Retro Christmas PNG Clipart</strong><br>Resolution: 640 × 935<br>Size: 336 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58901" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Retro Christmas PNG File"  href='https://www.pngall.com/christmas-png/download/58902'><div class="img_wrapper"><img width="730" height="955" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20730%20955'%3E%3C/svg%3E" class="attachment-full size-full" alt="Retro Christmas PNG File" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-File.png" /><noscript><img width="730" height="955" src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-File.png" class="attachment-full size-full" alt="Retro Christmas PNG File" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Retro Christmas PNG File</strong><br>Resolution: 730 × 955<br>Size: 1190 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58902" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Retro Christmas PNG Free Download"  href='https://www.pngall.com/christmas-png/download/58903'><div class="img_wrapper"><img width="750" height="475" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20750%20475'%3E%3C/svg%3E" class="attachment-full size-full" alt="Retro Christmas PNG Free Download" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-Free-Download.png" /><noscript><img width="750" height="475" src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-Free-Download.png" class="attachment-full size-full" alt="Retro Christmas PNG Free Download" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Retro Christmas PNG Free Download</strong><br>Resolution: 750 × 475<br>Size: 690 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58903" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Retro Christmas PNG Free Image"  href='https://www.pngall.com/christmas-png/download/58904'><div class="img_wrapper"><img width="512" height="498" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20498'%3E%3C/svg%3E" class="attachment-full size-full" alt="Retro Christmas PNG Free Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-Free-Image.png" /><noscript><img width="512" height="498" src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-Free-Image.png" class="attachment-full size-full" alt="Retro Christmas PNG Free Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Retro Christmas PNG Free Image</strong><br>Resolution: 512 × 498<br>Size: 237 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58904" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Retro Christmas PNG HD Image"  href='https://www.pngall.com/christmas-png/download/58905'><div class="img_wrapper"><img width="634" height="827" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20634%20827'%3E%3C/svg%3E" class="attachment-full size-full" alt="Retro Christmas PNG HD Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-HD-Image.png" /><noscript><img width="634" height="827" src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-HD-Image.png" class="attachment-full size-full" alt="Retro Christmas PNG HD Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Retro Christmas PNG HD Image</strong><br>Resolution: 634 × 827<br>Size: 555 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58905" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Retro Christmas PNG Image"  href='https://www.pngall.com/christmas-png/download/58906'><div class="img_wrapper"><img width="917" height="773" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20917%20773'%3E%3C/svg%3E" class="attachment-full size-full" alt="Retro Christmas PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-Image.png" /><noscript><img width="917" height="773" src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG-Image.png" class="attachment-full size-full" alt="Retro Christmas PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Retro Christmas PNG Image</strong><br>Resolution: 917 × 773<br>Size: 928 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58906" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Retro Christmas PNG"  href='https://www.pngall.com/christmas-png/download/58908'><div class="img_wrapper"><img width="959" height="959" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20959%20959'%3E%3C/svg%3E" class="attachment-full size-full" alt="Retro Christmas PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG.png" /><noscript><img width="959" height="959" src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-PNG.png" class="attachment-full size-full" alt="Retro Christmas PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Retro Christmas PNG</strong><br>Resolution: 959 × 959<br>Size: 1389 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58908" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Retro Christmas Transparent"  href='https://www.pngall.com/christmas-png/download/58909'><div class="img_wrapper"><img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full" alt="Retro Christmas Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-Transparent.png" /><noscript><img width="600" height="600" src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas-Transparent.png" class="attachment-full size-full" alt="Retro Christmas Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Retro Christmas Transparent</strong><br>Resolution: 600 × 600<br>Size: 543 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58909" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Retro Christmas"  href='https://www.pngall.com/christmas-png/download/58910'><div class="img_wrapper"><img width="657" height="809" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20657%20809'%3E%3C/svg%3E" class="attachment-full size-full" alt="Retro Christmas" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas.png" /><noscript><img width="657" height="809" src="https://www.pngall.com/wp-content/uploads/5/Retro-Christmas.png" class="attachment-full size-full" alt="Retro Christmas" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Retro Christmas</strong><br>Resolution: 657 × 809<br>Size: 634 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58910" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Round Christmas Frame PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58911'><div class="img_wrapper"><img width="1110" height="1053" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201110%201053'%3E%3C/svg%3E" class="attachment-full size-full" alt="Round Christmas Frame PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame-PNG-Clipart.png" /><noscript><img width="1110" height="1053" src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame-PNG-Clipart.png" class="attachment-full size-full" alt="Round Christmas Frame PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Round Christmas Frame PNG Clipart</strong><br>Resolution: 1110 × 1053<br>Size: 1524 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58911" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Round Christmas Frame PNG Image"  href='https://www.pngall.com/christmas-png/download/58913'><div class="img_wrapper"><img width="600" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20600'%3E%3C/svg%3E" class="attachment-full size-full" alt="Round Christmas Frame PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame-PNG-Image.png" /><noscript><img width="600" height="600" src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame-PNG-Image.png" class="attachment-full size-full" alt="Round Christmas Frame PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Round Christmas Frame PNG Image</strong><br>Resolution: 600 × 600<br>Size: 543 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58913" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Round Christmas Frame PNG"  href='https://www.pngall.com/christmas-png/download/58914'><div class="img_wrapper"><img width="548" height="588" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20548%20588'%3E%3C/svg%3E" class="attachment-full size-full" alt="Round Christmas Frame PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame-PNG.png" /><noscript><img width="548" height="588" src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame-PNG.png" class="attachment-full size-full" alt="Round Christmas Frame PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Round Christmas Frame PNG</strong><br>Resolution: 548 × 588<br>Size: 403 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58914" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Round Christmas Frame Transparent"  href='https://www.pngall.com/christmas-png/download/58915'><div class="img_wrapper"><img width="1024" height="1030" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%201030'%3E%3C/svg%3E" class="attachment-full size-full" alt="Round Christmas Frame Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame-Transparent.png" /><noscript><img width="1024" height="1030" src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame-Transparent.png" class="attachment-full size-full" alt="Round Christmas Frame Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Round Christmas Frame Transparent</strong><br>Resolution: 1024 × 1030<br>Size: 1326 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58915" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Round Christmas Frame"  href='https://www.pngall.com/christmas-png/download/58916'><div class="img_wrapper"><img width="557" height="600" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20557%20600'%3E%3C/svg%3E" class="attachment-full size-full" alt="Round Christmas Frame" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame.png" /><noscript><img width="557" height="600" src="https://www.pngall.com/wp-content/uploads/5/Round-Christmas-Frame.png" class="attachment-full size-full" alt="Round Christmas Frame" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Round Christmas Frame</strong><br>Resolution: 557 × 600<br>Size: 302 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58916" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Blue Christmas PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58917'><div class="img_wrapper"><img width="2500" height="3070" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202500%203070'%3E%3C/svg%3E" class="attachment-full size-full" alt="Blue Christmas PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG-Clipart.png" /><noscript><img width="2500" height="3070" src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG-Clipart.png" class="attachment-full size-full" alt="Blue Christmas PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Blue Christmas PNG Clipart</strong><br>Resolution: 2500 × 3070<br>Size: 2489 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58917" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Blue Christmas PNG Free Download"  href='https://www.pngall.com/christmas-png/download/58918'><div class="img_wrapper"><img width="500" height="500" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20500'%3E%3C/svg%3E" class="attachment-full size-full" alt="Blue Christmas PNG Free Download" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG-Free-Download.png" /><noscript><img width="500" height="500" src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG-Free-Download.png" class="attachment-full size-full" alt="Blue Christmas PNG Free Download" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Blue Christmas PNG Free Download</strong><br>Resolution: 500 × 500<br>Size: 69 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58918" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Blue Christmas PNG Image"  href='https://www.pngall.com/christmas-png/download/58919'><div class="img_wrapper"><img width="600" height="597" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20597'%3E%3C/svg%3E" class="attachment-full size-full" alt="Blue Christmas PNG Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG-Image.png" /><noscript><img width="600" height="597" src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG-Image.png" class="attachment-full size-full" alt="Blue Christmas PNG Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Blue Christmas PNG Image</strong><br>Resolution: 600 × 597<br>Size: 180 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58919" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Blue Christmas PNG Picture"  href='https://www.pngall.com/christmas-png/download/58920'><div class="img_wrapper"><img width="874" height="1280" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20874%201280'%3E%3C/svg%3E" class="attachment-full size-full" alt="Blue Christmas PNG Picture" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG-Picture.png" /><noscript><img width="874" height="1280" src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG-Picture.png" class="attachment-full size-full" alt="Blue Christmas PNG Picture" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Blue Christmas PNG Picture</strong><br>Resolution: 874 × 1280<br>Size: 485 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58920" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Blue Christmas PNG"  href='https://www.pngall.com/christmas-png/download/58921'><div class="img_wrapper"><img width="2335" height="1739" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202335%201739'%3E%3C/svg%3E" class="attachment-full size-full" alt="Blue Christmas PNG" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG.png" /><noscript><img width="2335" height="1739" src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-PNG.png" class="attachment-full size-full" alt="Blue Christmas PNG" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Blue Christmas PNG</strong><br>Resolution: 2335 × 1739<br>Size: 2383 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58921" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Blue Christmas Transparent"  href='https://www.pngall.com/christmas-png/download/58922'><div class="img_wrapper"><img width="1245" height="2606" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201245%202606'%3E%3C/svg%3E" class="attachment-full size-full" alt="Blue Christmas Transparent" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-Transparent.png" /><noscript><img width="1245" height="2606" src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas-Transparent.png" class="attachment-full size-full" alt="Blue Christmas Transparent" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Blue Christmas Transparent</strong><br>Resolution: 1245 × 2606<br>Size: 762 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58922" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Blue Christmas"  href='https://www.pngall.com/christmas-png/download/58923'><div class="img_wrapper"><img width="2603" height="3201" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202603%203201'%3E%3C/svg%3E" class="attachment-full size-full" alt="Blue Christmas" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas.png" /><noscript><img width="2603" height="3201" src="https://www.pngall.com/wp-content/uploads/5/Blue-Christmas.png" class="attachment-full size-full" alt="Blue Christmas" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Blue Christmas</strong><br>Resolution: 2603 × 3201<br>Size: 1225 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58923" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Corner PNG Clipart"  href='https://www.pngall.com/christmas-png/download/58924'><div class="img_wrapper"><img width="600" height="604" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20604'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner PNG Clipart" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Clipart.png" /><noscript><img width="600" height="604" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Clipart.png" class="attachment-full size-full" alt="Christmas Corner PNG Clipart" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner PNG Clipart</strong><br>Resolution: 600 × 604<br>Size: 316 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58924" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon portrait'>
+				<a title="Christmas Corner PNG File"  href='https://www.pngall.com/christmas-png/download/58925'><div class="img_wrapper"><img width="600" height="635" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20635'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner PNG File" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-File.png" /><noscript><img width="600" height="635" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-File.png" class="attachment-full size-full" alt="Christmas Corner PNG File" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner PNG File</strong><br>Resolution: 600 × 635<br>Size: 296 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58925" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Corner PNG Free Download"  href='https://www.pngall.com/christmas-png/download/58926'><div class="img_wrapper"><img width="3000" height="2455" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%203000%202455'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner PNG Free Download" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Free-Download.png" /><noscript><img width="3000" height="2455" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Free-Download.png" class="attachment-full size-full" alt="Christmas Corner PNG Free Download" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner PNG Free Download</strong><br>Resolution: 3000 × 2455<br>Size: 1868 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58926" target="blank" class="download">Download</a></dd></dl><br style="clear: both" /><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Corner PNG Free Image"  href='https://www.pngall.com/christmas-png/download/58927'><div class="img_wrapper"><img width="589" height="576" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20589%20576'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner PNG Free Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Free-Image.png" /><noscript><img width="589" height="576" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-Free-Image.png" class="attachment-full size-full" alt="Christmas Corner PNG Free Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner PNG Free Image</strong><br>Resolution: 589 × 576<br>Size: 314 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58927" target="blank" class="download">Download</a></dd></dl><dl class='gallery-item'>
+			<dt class='gallery-icon landscape'>
+				<a title="Christmas Corner PNG HD Image"  href='https://www.pngall.com/christmas-png/download/58928'><div class="img_wrapper"><img width="600" height="451" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20451'%3E%3C/svg%3E" class="attachment-full size-full" alt="Christmas Corner PNG HD Image" data-lazy-src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-HD-Image.png" /><noscript><img width="600" height="451" src="https://www.pngall.com/wp-content/uploads/5/Christmas-Corner-PNG-HD-Image.png" class="attachment-full size-full" alt="Christmas Corner PNG HD Image" /></noscript></div></a>
+			</dt><strong><dd class="wp-caption-text gallery-caption">Christmas Corner PNG HD Image</strong><br>Resolution: 600 × 451<br>Size: 381 KB<br>Image Format: .png<br><a href="https://www.pngall.com/christmas-png/download/58928" target="blank" class="download">Download</a></dd></dl>
+			<br style='clear: both' />
+		</div>
+</p>
+
+<!-- Quick Adsense WordPress Plugin: http://quickadsense.com/ -->
+<div class="7e5d63c6540feda5e227514ef81ca30a" data-index="3" style="float: none; margin:25px 0 25px 0; text-align:center;">
+<p><span style="font-size:0.8em">Advertisements</span><style type="text/css"> 
+.adslot_1 { max-width: 300px; height: auto; margin:10px 0px; }
+@media (min-width:125px) { .adslot_1 { width:125px; height:125px; } } 
+@media (min-width:180px) { .adslot_1 { width:180px; height:150px; } } 
+@media (min-width:200px) { .adslot_1 { width:200px; height:200px; } } 
+@media (min-width:250px) { .adslot_1 { width:250px; height:250px; } } 
+@media (min-width:300px) { .adslot_1 { width:300px; height:600px; } } 
+@media (min-width:336px) { .adslot_1 { width:336px; height:280px; } } 
+@media (min-width:468px) { .adslot_1 { width:468px; height:60px; } } 
+@media (min-width:728px) { .adslot_1 { width:728px; height:90px; } }
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- pngall link ads unit -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8822717667672157"
+     data-ad-slot="5043863148"
+     data-ad-format="link"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+</div>
+
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;"></div>											</div><!-- .entry-content -->
+						<h3>Matched Content:</h3>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-8822717667672157"
+     data-ad-slot="8613365474"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+		<br/ >
+									 
+				<div class="clear"></div>
+			
+			</article><!-- #post -->
+							<h3>Related PNG:</h3>
+<!-- relpost-thumb-wrapper --><div class="relpost-thumb-wrapper"><!-- filter-class --><div class="relpost-thumb-container"><div style="clear: both"></div><div style="clear: both"></div><!-- relpost-block-container --><div class="relpost-block-container"><a class="relpost-block-single" href="https://www.pngall.com/independence-day-png"><div class="relpost-custom-block-single" style="width: 180px; height: 255px;"><div class="relpost-block-single-image" alt="Independence Day PNG Picture"  style="background: transparent url(https://www.pngall.com/wp-content/uploads/1/Independence-Day-PNG-Picture-180x180.png) no-repeat scroll 0% 0%; width: 180px; height: 180px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Independence Day PNG Transparent Images</div></div></a><a class="relpost-block-single" href="https://www.pngall.com/good-friday-png"><div class="relpost-custom-block-single" style="width: 180px; height: 255px;"><div class="relpost-block-single-image" alt="Good Friday"  style="background: transparent url(https://www.pngall.com/wp-content/uploads/2018/05/Good-Friday-180x180.png) no-repeat scroll 0% 0%; width: 180px; height: 180px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Good Friday PNG Transparent Images</div></div></a><a class="relpost-block-single" href="https://www.pngall.com/gandhi-jayanti-png"><div class="relpost-custom-block-single" style="width: 180px; height: 255px;"><div class="relpost-block-single-image" alt="Gandhi Jayanti PNG File"  style="background: transparent url(https://www.pngall.com/wp-content/uploads/1/Gandhi-Jayanti-PNG-File-180x180.png) no-repeat scroll 0% 0%; width: 180px; height: 180px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Gandhi Jayanti PNG Transparent Images</div></div></a></div><!-- close relpost-block-container --><div style="clear: both"></div></div><!-- close filter class --></div><!-- close relpost-thumb-wrapper --><br/ >			
+					  		
+<!-- BEGIN #comments -->
+<div id="comments">
+
+			<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Comment <small><a rel="nofollow" id="cancel-comment-reply-link" href="/christmas-png#respond" style="display:none;">Cancel Reply</a></small></h3><form action="https://www.pngall.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" required='required' /></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30" maxlength="200" /></p>
+<div class="anr_captcha_field"><div id="anr_captcha_field_1" class="anr_captcha_field_div"></div></div><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Submit Comment" /> <input type='hidden' name='comment_post_ID' value='5710' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="97828669b0" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js" name="ak_js" value="135"/><script type="rocketlazyloadscript">document.getElementById( "ak_js" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+		
+<!-- #comments -->
+</div> 	
+		  			  		
+			
+	</div><!-- #content -->
+
+
+	<div id="sidebar">
+	
+				
+			<div class="widget entry-meta entry-header">
+			
+				                 
+	            <span class="entry-views"><i class="icon-camera"></i> 61139 Total Views</span> 
+				
+				<span class="entry-categories"><i class="icon-folder-close"></i> <a href="https://www.pngall.com/category/holidays-events" rel="category tag">Holidays &amp; Events</a> PNG</span>
+				
+				<span class="entry-tags"><i class="icon-tags"></i> <a href="https://www.pngall.com/tag/christmas" rel="tag">Christmas</a> PNG</span>				
+								
+				<div class="additional-info">	
+									</div><!-- .additional-info -->
+							
+			</div><!-- .entry-meta .entry-header -->
+				
+				
+		<aside id="search-2" class="widget widget_search"><h3 class="widget-title">Search</h3><div class="search-form">
+	<form action="https://www.pngall.com" id="searchform" method="get">
+		<input name="s" type="text" placeholder="Search this site..."></input>
+	</form>
+</div><!-- .search-form --></aside><aside id="custom_html-6" class="widget_text widget widget_custom_html"><h3 class="widget-title">Follow Us</h3><div class="textwidget custom-html-widget"><a href="https://www.facebook.com/pngall" class="fa fa-facebook" target="_blank" rel="noopener"></a>
+<a href="https://www.twitter.com/pngallimg" class="fa fa-twitter" target="_blank" rel="noopener"></a>
+<a href="https://feeds.feedburner.com/PNGAll" class="fa fa-rss" target="_blank" rel="noopener"></a>
+</div></aside><aside id="categories-3" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-41"><a href="https://www.pngall.com/category/alphabets-numbers">Alphabets &amp; Numbers</a> (41)
+</li>
+	<li class="cat-item cat-item-2"><a href="https://www.pngall.com/category/animals">Animals</a> (207)
+<ul class='children'>
+	<li class="cat-item cat-item-3"><a href="https://www.pngall.com/category/animals/birds">Birds</a> (55)
+</li>
+	<li class="cat-item cat-item-4"><a href="https://www.pngall.com/category/animals/insects">Insects</a> (25)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-286"><a href="https://www.pngall.com/category/anime">Anime</a> (16)
+</li>
+	<li class="cat-item cat-item-7"><a href="https://www.pngall.com/category/artistic">Artistic</a> (152)
+</li>
+	<li class="cat-item cat-item-274"><a href="https://www.pngall.com/category/brands">Brands</a> (29)
+</li>
+	<li class="cat-item cat-item-29"><a href="https://www.pngall.com/category/cartoon">Cartoon</a> (97)
+</li>
+	<li class="cat-item cat-item-38"><a href="https://www.pngall.com/category/celebs">Celebs</a> (77)
+</li>
+	<li class="cat-item cat-item-227"><a href="https://www.pngall.com/category/clothing">Clothing</a> (47)
+</li>
+	<li class="cat-item cat-item-313"><a href="https://www.pngall.com/category/cryptocurrency">Cryptocurrency</a> (61)
+</li>
+	<li class="cat-item cat-item-8"><a href="https://www.pngall.com/category/education">Education</a> (66)
+</li>
+	<li class="cat-item cat-item-9"><a href="https://www.pngall.com/category/fantasy">Fantasy</a> (51)
+</li>
+	<li class="cat-item cat-item-264"><a href="https://www.pngall.com/category/fictional-characters">Fictional Characters</a> (64)
+</li>
+	<li class="cat-item cat-item-329"><a href="https://www.pngall.com/category/finance">Finance</a> (1)
+</li>
+	<li class="cat-item cat-item-151"><a href="https://www.pngall.com/category/flags">Flags</a> (44)
+</li>
+	<li class="cat-item cat-item-10"><a href="https://www.pngall.com/category/food">Food</a> (238)
+<ul class='children'>
+	<li class="cat-item cat-item-11"><a href="https://www.pngall.com/category/food/fruits">Fruits</a> (33)
+</li>
+	<li class="cat-item cat-item-12"><a href="https://www.pngall.com/category/food/vegetables">Vegetables</a> (18)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-31"><a href="https://www.pngall.com/category/games">Games</a> (115)
+</li>
+	<li class="cat-item cat-item-13"><a href="https://www.pngall.com/category/holidays-events">Holidays &amp; Events</a> (119)
+</li>
+	<li class="cat-item cat-item-35"><a href="https://www.pngall.com/category/internet">Internet</a> (227)
+</li>
+	<li class="cat-item cat-item-23"><a href="https://www.pngall.com/category/lifestyle">Lifestyle</a> (115)
+</li>
+	<li class="cat-item cat-item-14"><a href="https://www.pngall.com/category/love">Love</a> (35)
+</li>
+	<li class="cat-item cat-item-1"><a href="https://www.pngall.com/category/miscellaneous">Miscellaneous</a> (240)
+<ul class='children'>
+	<li class="cat-item cat-item-152"><a href="https://www.pngall.com/category/miscellaneous/stamps">Stamps</a> (12)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-37"><a href="https://www.pngall.com/category/movies">Movies</a> (57)
+</li>
+	<li class="cat-item cat-item-15"><a href="https://www.pngall.com/category/music">Music</a> (130)
+</li>
+	<li class="cat-item cat-item-5"><a href="https://www.pngall.com/category/nature">Nature</a> (153)
+</li>
+	<li class="cat-item cat-item-25"><a href="https://www.pngall.com/category/objects">Objects</a> (258)
+</li>
+	<li class="cat-item cat-item-17"><a href="https://www.pngall.com/category/people">People</a> (121)
+</li>
+	<li class="cat-item cat-item-18"><a href="https://www.pngall.com/category/religion">Religion</a> (48)
+</li>
+	<li class="cat-item cat-item-300"><a href="https://www.pngall.com/category/sign-board">Sign Board</a> (16)
+</li>
+	<li class="cat-item cat-item-45"><a href="https://www.pngall.com/category/space">Space</a> (22)
+</li>
+	<li class="cat-item cat-item-19"><a href="https://www.pngall.com/category/sports">Sports</a> (191)
+</li>
+	<li class="cat-item cat-item-20"><a href="https://www.pngall.com/category/technology">Technology</a> (144)
+</li>
+	<li class="cat-item cat-item-217"><a href="https://www.pngall.com/category/text">Text</a> (12)
+</li>
+	<li class="cat-item cat-item-21"><a href="https://www.pngall.com/category/vehicles">Vehicles</a> (138)
+<ul class='children'>
+	<li class="cat-item cat-item-22"><a href="https://www.pngall.com/category/vehicles/cars">Cars</a> (65)
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-6"><a href="https://www.pngall.com/category/world">World</a> (115)
+</li>
+			</ul>
+
+			</aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h3 class="widget-title">Latest PNG Images</h3>
+		<ul>
+											<li>
+					<a href="https://www.pngall.com/avatar-png">Avatar PNG Transparent Images</a>
+									</li>
+											<li>
+					<a href="https://www.pngall.com/common-daisy-png">Common Daisy PNG Transparent Images</a>
+									</li>
+											<li>
+					<a href="https://www.pngall.com/save-png">Save PNG Transparent Images</a>
+									</li>
+											<li>
+					<a href="https://www.pngall.com/enrique-iglesias-png">Enrique Iglesias PNG Transparent Images</a>
+									</li>
+					</ul>
+
+		</aside><aside id="custom_html-10" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><div id='vi-sticky-ad'>
+              <div id='vi-ad'>
+                <div class="height_250_ad">
+                  <div class="adsbyvli" style="width:300px; height:250px" data-ad-slot="vi_98662"></div> <script type="rocketlazyloadscript">(vitag.Init = window.vitag.Init || []).push(function () { viAPItag.display("vi_98662") })</script>
+                </div>
+                <div class="text-ads"
+                  style="text-align: center; font-size: 12px; padding-top: 10px; padding-bottom: 10px; text-transform: uppercase;">
+                  Advertisement</div>
+                <div class="height_250_ad">
+                  <div class="adsbyvli" style="width:300px; height:250px" data-ad-slot="vi_98662"></div> <script type="rocketlazyloadscript">(vitag.Init = window.vitag.Init || []).push(function () { viAPItag.display("vi_98662") })</script>
+                </div>
+              </div>
+            </div>
+            <script type="rocketlazyloadscript">
+              if (window.innerWidth > 900) {
+                var adElemSticky = document.getElementById('vi-sticky-ad');
+                window.onscroll = function () {
+                  var adElem = document.getElementById('vi-ad');
+                  var rect = adElemSticky.getBoundingClientRect();
+                  adElemSticky.style.width = rect.width + 'px';
+                  adElemSticky.style.height = rect.height + 'px';
+                  console.log(rect);
+                  console.log(rect.top);
+                  if (rect.top <= 0) {
+                    adElem.style.position = 'fixed';
+                    adElem.style.top = '15px';
+                    adElem.style.zIndex = '2147483647';
+                    adElem.style.width = rect.width + 'px';
+                    adElem.style.height = rect.height + 'px';
+                  } else {
+                    adElem.style.position = '';
+                    adElem.style.top = '';
+                    adElem.style.zIndex = '';
+                    adElem.style.width = '';
+                    adElem.style.height = '';
+                  }
+                };
+              }
+              (function () {
+                var adElemSticky = document.getElementById('vi-sticky-ad');
+                var width = window.innerWidth;
+                if (width <= 900) {
+                  adElemSticky.innerHTML = '';
+                }
+              }());
+            </script></div></aside>		
+	</div><!-- #sidebar -->
+	
+<div class="clear"></div>
+</div><!-- #main -->
+
+	<footer id="footer">
+				
+				<div id="copyright" class="container">
+				<div class="right">
+				&copy; 2016 - 2021 <a href="https://www.pngall.com">PNG All</a>. All rights reserved.          				</div><!-- .left -->
+				<div class="left">
+				
+					
+
+<a href="/">Home</a> | <a href="/cookie-policy">Cookie Policy</a> | <a href="/privacy-policy">Privacy Policy</a> | <a href="/about">About</a> | <a href="/sitemap.xml">Sitemap</a>
+				</div><!-- .right -->
+				<div class="clear"></div>
+		</div><!-- #copyright -->
+		
+	</footer><!-- #footer -->
+	
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">var jQueryScriptOutputted = false;function initJQuery() {if (typeof(jQuery) == "undefined") {if (!jQueryScriptOutputted) {jQueryScriptOutputted = true;document.write("<scr" + "ipt type=\"text/javascript\" src=\"https://code.jquery.com/jquery-1.8.2.min.js\"></scr" + "ipt>");}setTimeout("initJQuery()", 50);}}initJQuery();</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">jQuery(document).ready(function() {
+jQuery(".7e5d63c6540feda5e227514ef81ca30a").click(function() {
+jQuery.post(
+"https://www.pngall.com/wp-admin/admin-ajax.php", {
+"action": "quick_adsense_onpost_ad_click",
+"quick_adsense_onpost_ad_index": jQuery(this).attr("data-index"),
+"quick_adsense_nonce": "bbd6fbeef4",
+}, function(response) { }
+);
+});
+});
+</script><!-- Powered by WPtouch: 4.3.28 --><script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/adv1\/|\/monetization.js|\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin|\/logout|\/wp-login.php","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.pngall.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.pngall.com/wp-includes/js/comment-reply.min.js?ver=3e5127613c2aa5248f9ef3135727e949' id='comment-reply-js'></script>
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+				var anr_onloadCallback = function() {
+					for ( var i = 0; i < document.forms.length; i++ ) {
+						var form = document.forms[i];
+						var captcha_div = form.querySelector( '.anr_captcha_field_div' );
+
+						if ( null === captcha_div )
+							continue;
+						captcha_div.innerHTML = '';
+						( function( form ) {
+							var anr_captcha = grecaptcha.render( captcha_div,{
+								'sitekey' : '6LdENs8UAAAAANiJ7a_tnKzi74wz3UQOnEAi-R3G',
+								'size'  : 'normal',
+								'theme' : 'light'
+							});
+							if ( typeof jQuery !== 'undefined' ) {
+								jQuery( document.body ).on( 'checkout_error', function(){
+									grecaptcha.reset(anr_captcha);
+								});
+							}
+							if ( typeof wpcf7 !== 'undefined' ) {
+								document.addEventListener( 'wpcf7submit', function() {
+									grecaptcha.reset(anr_captcha);
+								}, false );
+							}
+						})(form);
+					}
+				};
+			</script>
+						<script type="rocketlazyloadscript" src="https://www.google.com/recaptcha/api.js?onload=anr_onloadCallback&#038;render=explicit"
+				async defer>
+			</script>
+			<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.pngall.com/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><style>
+._bsa_flexbar .flexbar-logo img { background: none; }
+</style><script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('flexbar', 'CK7DC2JU', 'placement:pngallcom');
+  	}
+})();
+</script>
+</body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1639832484 -->
