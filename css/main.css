@@ -1,0 +1,25 @@
+body{
+    background-color: pink;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#container{
+    width: 1800px;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+#logo{
+    text-align: center;
+    color: yellowgreen;
+    letter-spacing: 2px;
+    font-size: 50px;
+}
+
+#menu{
+    background-color: seagreen;
+    margin-top: 1%;
+    color: white;
+    padding: 2%;
+    border: 5px dotted black;
+}
