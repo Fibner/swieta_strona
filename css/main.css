@@ -46,6 +46,7 @@ hr{
     width: 400px;
     font-size: 30px;
     background-color: brown;
+    color: white;
     min-height: 400px;
     text-align: center;
     margin-top: 3%;
@@ -59,6 +60,7 @@ hr{
     width: 400px;
     font-size: 30px;
     background-color: brown;
+    color: white;
     min-height: 400px;
     text-align: center;
     margin-top: 3%;
@@ -72,10 +74,19 @@ hr{
     width: 400px;
     font-size: 30px;
     background-color: brown;
+    color: white;
     min-height: 400px;
     text-align: center;
     margin-top: 3%;
     margin-left: 8%;
+
+}
+#footer{
+    clear: both;
+    color: black;
+    text-align: center;
+    padding: 5%;
+    font-size: 20px;
 
 }
 
@@ -119,4 +130,18 @@ link{
 
 .link{
     color: white;
+}
+
+.img{
+    float: left;
+    width: 170px;
+    height: 150px;
+    margin-top: -150px;
+    margin-left: 400px;
+}
+
+.img2{
+    width: 300px;
+    height: 200px;
+
 }
