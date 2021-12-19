@@ -12,12 +12,16 @@ try{
 if($result -> num_rows > 0){
     foreach($result as $result){
         if($result['Pass'] == $password){
+            $_SESSION['isLogged'] = true;
             header("Location: ../main");
         }else{
             header("Location: ../index");
+            $_SESSION['isLogged'] = false;
+            $_SESSION['errpass'] = "Błędny login lub hasło!";
         }
     }
 }else{
     header("Location: ../index");
+    $_SESSION['isLogged'] = false;
     $_SESSION['errpass'] = "Błędny login lub hasło!";
 }

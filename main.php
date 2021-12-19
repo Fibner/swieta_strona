@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!$_SESSION["isLogged"]){
+    header("Location: index");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +45,10 @@
 
             <a class="link" href="google.com">
                 <div class="option">Kontakt</div>
+            </a>
+
+            <a class="link" href="scripts/logout">
+                <div class="option">Wyloguj</div>
             </a>
 
             <div style="clear:both;"></div>

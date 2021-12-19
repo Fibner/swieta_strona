@@ -1,4 +1,9 @@
-<?php session_start() ?>
+<?php
+session_start();
+if($_SESSION["isLogged"]){
+    header("Location: main");
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 
