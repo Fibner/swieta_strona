@@ -3,7 +3,7 @@ body{
     animation-duration: 5s;
     animation-iteration-count: infinite;
     overflow: hidden;
-  
+    background-image: url('../img/abc.jpg');
 }
 #img{
     overflow-x: hidden;
