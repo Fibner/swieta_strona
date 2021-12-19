@@ -112,9 +112,18 @@ hr{
     float: left;
     min-height: 20px;
     height: 25px;
-    font-size: 23px;
+    font-size: 20px;
     padding: 5px;
-    margin-left:10%;
+    margin-left:6%;
+}
+
+.logout{
+    margin-left: 16%;
+    float: left;
+    min-height: 20px;
+    height: 25px;
+    font-size: 20px;
+    padding: 5px;
 }
 
 .option:hover{

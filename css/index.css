@@ -1,17 +1,17 @@
 body{
-    animation: bgColor;
     animation-duration: 5s;
     animation-iteration-count: infinite;
     overflow: hidden;
     background-image: url('../img/abc.jpg');
 }
+
 #img{
     overflow-x: hidden;
     position: relative;
     left: 105%;
 }
 #form{
-    background-color: rgb(245, 220, 184);
+    background-color: rgba(112, 118, 148, 0.7);
     float: left;
     width: 550px;
     height: 450px;
@@ -32,13 +32,6 @@ p{
     margin-top: -20px;
 }
 
-
-
-@keyframes bgColor{
-    0% {background-color: rgb(255, 255, 255);}
-    50% {background-color: rgb(131, 90, 87);}
-    100% {background-color: white;}
-}
 
 .button{
     border-radius: 50px;

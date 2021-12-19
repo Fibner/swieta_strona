@@ -48,7 +48,7 @@ if(isset($_SESSION["isLogged"]) && !$_SESSION["isLogged"]){
             </a>
 
             <a class="link" href="scripts/logout">
-                <div class="option">Wyloguj</div>
+                <div class="logout">Wyloguj</div>
             </a>
 
             <div style="clear:both;"></div>
