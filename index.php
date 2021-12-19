@@ -21,13 +21,13 @@ if($_SESSION["isLogged"]){
 <body>
     <div id="img"><img src="img/sc.gif"></div>
     <div id="form">
-        <h1>Sklep Bałaga:)</h1>
+        <h1>Sklep Bałaga :)</h1>
         <p>Zaloguj się do sklepu.</p><br>
         <form method="POST" action="scripts/login" onsubmit="return checkValidation()">
-            <label>Nazwa użytkownika lub e-mail</label><br>
+            <label><b>Nazwa użytkownika lub e-mail</b></label><br>
             <input type="text" name="login" id="login">
             <br><br>
-            <label>Hasło</label><br>
+            <label><b>Hasło</b></label><br>
             <input type="password" name="pass" id="pass">
             <br>
             <div id="err"><?php if(isset($_SESSION['errpass'])) echo "<br>".$_SESSION['errpass']; ?></div>

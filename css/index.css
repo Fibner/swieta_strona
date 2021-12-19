@@ -11,10 +11,10 @@ body{
     left: 105%;
 }
 #form{
-    background-color: rgba(112, 118, 148, 0.7);
+    background-color: rgba(112, 118, 148, 0.8);
     float: left;
     width: 550px;
-    height: 450px;
+    height: 500px;
     padding: 5px;
     text-align: center;
     margin-top: 13%;
