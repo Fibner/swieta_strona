@@ -29,7 +29,7 @@ if(isset($_SESSION["isLogged"]) && !$_SESSION["isLogged"]){
         <div id="menu">
 
             <a class="link" href="forher">
-                <div class="option">Prezenty dla niej</div>
+                <div style="background-color: rgb(90, 0, 0);" class="option">Prezenty dla niej</div>
             </a>
 
             <a class="link" href="google.com">
@@ -53,37 +53,6 @@ if(isset($_SESSION["isLogged"]) && !$_SESSION["isLogged"]){
             </a>
 
             <div style="clear:both;"></div>
-        </div>
-
-
-        <div id="content">
-            <p1>Idealny sklep na świąteczne zakupy!</p1><br>
-            <p2>zapoznaj się z produktami na naszej stronie.</p2>
-            <hr>
-        </div>
-
-        <div id="contentB">
-            <p>Prezenty dla niej</p>
-            <img class="img2" src="img/2.jpg">
-
-            <hr>
-            <button class="button" onclick="document.location.href = 'forher'">Pokaż kolekcje</button>
-        </div>
-
-        <div id="contentC">
-            <p>Prezenty dla niego</p>
-            <img class="img2" src="img/2.jpg">
-
-            <hr>
-            <button class="button" onclick="alert('HELLO WORLD')">Pokaż kolekcje</button>
-        </div>
-
-        <div id="contentD">
-            <p>Prezenty dla dziecka</p>
-            <img class="img2" src="img/2.jpg">
-
-            <hr>
-            <button class="button" onclick="alert('HELLO WORLD')">Pokaż kolekcje</button>
         </div>
 
         <div id="footer">
