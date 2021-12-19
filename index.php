@@ -16,17 +16,19 @@
 <body>
     <div id="img"><img src="img/sc.gif"></div>
     <div id="form">
-        <h1>Halo kolego, zaloguj się pierw!</h1>
+        <h1>Sklep Bałaga:)</h1>
+        <p>Zaloguj się do sklepu.</p><br>
         <form method="POST" action="scripts/login" onsubmit="return checkValidation()">
-            <label>Login:</label>
+            <label>Nazwa użytkownika lub e-mail</label><br>
             <input type="text" name="login" id="login">
             <br><br>
-            <label>Hasło:</label>
+            <label>Hasło</label><br>
             <input type="password" name="pass" id="pass">
             <br>
             <div id="err"><?php if(isset($_SESSION['errpass'])) echo "<br>".$_SESSION['errpass']; ?></div>
             <br>
             <button class="button" value="Zaloguj">Zaloguj się</button>
+
         </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

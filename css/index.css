@@ -11,15 +11,32 @@ body{
     left: 105%;
 }
 #form{
+    background-color: rgb(245, 220, 184);
+    float: left;
+    width: 550px;
+    height: 450px;
+    padding: 5px;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 13%;
     font-family: 'Open Sans Condensed', sans-serif;
     letter-spacing: 2px;
     font-size: 20px;
+    margin-left: 35%;
 }
+
+h1{
+    letter-spacing: 4px;
+}
+
+p{
+    margin-top: -20px;
+}
+
+
+
 @keyframes bgColor{
-    0% {background-color: white;}
-    50% {background-color: red;}
+    0% {background-color: rgb(255, 255, 255);}
+    50% {background-color: rgb(131, 90, 87);}
     100% {background-color: white;}
 }
 
@@ -28,7 +45,8 @@ body{
     width: 150px;
     font-size: 20px;
     font-family: 'Open Sans Condensed', sans-serif;
-    background-color: rgb(253, 227, 192);
+    background-color: rgb(0, 0, 0);
     padding: 5px;
+    color:white;
     border: none;
 }

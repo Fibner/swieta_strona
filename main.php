@@ -22,23 +22,23 @@
         <div id="menu">
 
             <a class="link" href="google.com">
-                <div class="option">a</div>
+                <div class="option">Prezenty dla niej</div>
             </a>
 
             <a class="link" href="google.com">
-                <div class="option">b</div>
+                <div class="option">Prezenty dla niego</div>
             </a>
 
             <a class="link" href="google.com">
-                <div class="option">c</div>
+                <div class="option">Prezenty dla dziecka</div>
             </a>
 
             <a class="link" href="google.com">
-                <div class="option">d</div>
+                <div class="option">O nas</div>
             </a>
 
             <a class="link" href="google.com">
-                <div class="option">e</div>
+                <div class="option">Kontakt</div>
             </a>
 
             <div style="clear:both;"></div>
@@ -52,30 +52,31 @@
         </div>
 
         <div id="contentB">
-            <p>GFDSAGSGRGAGD</p>
+            <p>Prezenty dla niej</p>
             <img class="img2" src="img/2.jpg">
 
             <hr>
-            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ c</button>
+            <button class="button" onclick="alert('HELLO WORLD')">Pokaż kolekcje</button>
         </div>
 
         <div id="contentC">
-            <p>GFDSAGSGRGAGD</p>
+            <p>Prezenty dla niego</p>
             <img class="img2" src="img/2.jpg">
 
             <hr>
-            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ d</button>
+            <button class="button" onclick="alert('HELLO WORLD')">Pokaż kolekcje</button>
         </div>
 
         <div id="contentD">
-            <p>GFDSAGSGRGAGD</p>
+            <p>Prezenty dla dziecka</p>
             <img class="img2" src="img/2.jpg">
 
             <hr>
-            <button class="button" onclick="alert('HELLO WORLD')">KUP TERAZ e</button>
+            <button class="button" onclick="alert('HELLO WORLD')">Pokaż kolekcje</button>
         </div>
 
         <div id="footer">
+            <hr>
             Filip Bałaga 3TIP/G
         </div>
 
