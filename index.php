@@ -32,7 +32,10 @@ if($_SESSION["isLogged"]){
             <br>
             <div id="err"><?php if(isset($_SESSION['errpass'])) echo "<br>".$_SESSION['errpass']; ?></div>
             <br>
-            <button class="button" value="Zaloguj">Zaloguj się</button>
+            <input type="submit" class="button" value="Zaloguj się"></button>
+            <br>
+            <br>
+            <button style="background-color: rgb(48, 46, 46);" class="button" value="Zaloguj" onclick="document.location.href = 'createAcc'">Utwórz konto</button>
 
         </form>
     </div>

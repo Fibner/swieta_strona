@@ -1,11 +1,15 @@
 <?php
+if(!isset($_POST['login']) || $_POST['login'] == "" || !isset($_POST['pass']) || $_POST['pass'] == ""){
+    header("Location: ../index");
+}
 session_start();
 session_unset();
 require "functions.php";
 $login = $_POST['login'];
 $password = $_POST['pass'];
 try{
-    $result = $db -> query("SELECT Username, Pass FROM users WHERE Username = '{$login}'");
+    $result = $db -> query("SELECT Username, Pass, Email FROM users WHERE Username = '{$login}' OR Email = '{$login}'");
+    var_dump($result);
 }catch(Exception $e){
 
 }
