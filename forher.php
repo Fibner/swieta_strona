@@ -1,4 +1,5 @@
 <?php
+include "scripts/functions.php";
 session_start();
 if(isset($_SESSION["isLogged"]) && !$_SESSION["isLogged"]){
     header("Location: index");
@@ -15,7 +16,19 @@ if(isset($_SESSION["isLogged"]) && !$_SESSION["isLogged"]){
     <link rel="stylesheet" href="css/global.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet"><style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+</style>
 </head>
 
 <body>
@@ -55,6 +68,12 @@ if(isset($_SESSION["isLogged"]) && !$_SESSION["isLogged"]){
             <div style="clear:both;"></div>
         </div>
 
+        <div id="content" style="font-family: Arial, Helvetica, sans-serif;">
+            <?php 
+            createTable("her");
+            ?>
+        </div>
+
         <div id="footer">
             <hr>
             Filip Bałaga 3TIP/G
@@ -62,6 +81,7 @@ if(isset($_SESSION["isLogged"]) && !$_SESSION["isLogged"]){
 
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/global.js"></script>
 </body>
 

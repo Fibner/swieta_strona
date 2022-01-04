@@ -1,3 +1,9 @@
 #logo{
     cursor: pointer;
 }
+
+.item:hover{
+    cursor: pointer;
+    background-color: brown;
+    color: white;
+}
