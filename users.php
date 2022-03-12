@@ -42,11 +42,11 @@ td, th {
         <div id="menu">
 
             <a class="link" href="forher">
-                <div style="background-color: rgb(90, 0, 0);" class="option">Prezenty dla niej</div>
+                <div class="option">Prezenty dla niej</div>
             </a>
 
             <a class="link" href="forhim">
-                <div class="option">Prezenty dla niego</div>
+                <div style="background-color: rgb(90, 0, 0);" class="option">Prezenty dla niego</div>
             </a>
 
             <a class="link" href="forchild">
@@ -70,7 +70,7 @@ td, th {
 
         <div id="content" style="font-family: Arial, Helvetica, sans-serif;">
             <?php 
-            createTable("W");
+            createUsersTable();
             ?>
         </div>
 

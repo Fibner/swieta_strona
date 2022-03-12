@@ -32,11 +32,11 @@ if(isset($_SESSION["isLogged"]) && !$_SESSION["isLogged"]){
                 <div class="option">Prezenty dla niej</div>
             </a>
 
-            <a class="link" href="google.com">
+            <a class="link" href="forhim">
                 <div class="option">Prezenty dla niego</div>
             </a>
 
-            <a class="link" href="google.com">
+            <a class="link" href="forchild">
                 <div class="option">Prezenty dla dziecka</div>
             </a>
 
@@ -44,8 +44,8 @@ if(isset($_SESSION["isLogged"]) && !$_SESSION["isLogged"]){
                 <div class="option">O nas</div>
             </a>
 
-            <a class="link" href="google.com">
-                <div class="option">Kontakt</div>
+            <a class="link" href="users">
+                <div class="option">Użytkownicy</div>
             </a>
 
             <a class="link" href="scripts/logout">
